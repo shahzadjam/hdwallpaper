@@ -1,16 +1,3 @@
-/*
- Theme Name:     Twenty Thirteen Child
- Theme URI:      http://example.com/twenty-thirteen-child/
- Description:    Twenty Thirteen Child Theme
- Author:         John Doe
- Author URI:     http://example.com
- Template:       twentythirteen
- Version:        1.0.0
-*/
-
-/*@import url("../twentythirteen/style.css");*/
-
-/* =Theme customization starts here
 @charset "utf-8";
 /* ==|== primary styles =====================================================
 	Author: Kashif Jinn
@@ -54,8 +41,8 @@ p {}
 
 @font-face {
     font-family: 'bebasregular';
-    src: url('fonts/bebas___-webfont.woff') format('woff'),
-         url('fonts/bebas___-webfont.ttf') format('truetype');
+    src: url('../fonts/bebas___-webfont.woff') format('woff'),
+         url('../fonts/bebas___-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -65,19 +52,19 @@ p {}
 
 
 #wrapper{ width:100%; margin:0px;}
-.header{ width:100%; margin:0px;  background:url(images/headerBg.jpg) 0px 0px repeat-x; }
+.header{ width:100%; margin:0px;  background:url(../images/headerBg.jpg) 0px 0px repeat-x; }
 .headerInner{ max-width:1107px; margin: 0 auto;}
 .headerOuterLft{ width:885px; margin:0px; padding:0px;}
 .welcome{ margin:20px 0 0 70px;}
 .welcome p{ font-size:14px; color:#2aa5cf; font-weight:bold;}
 .inputOuter{  margin:14px 0 0 0px;}
 .input{ width:411px;height:27px; line-height:27px; border:1px solid #2aa3ce; background-color:#FFF; font-size:12px; color:#9d9d9d; padding-left:10px;}
-.inputButton{ width:65px; height:29px; background:url(images/inputButton.jpg) 0px 0px no-repeat; cursor:pointer;}
+.inputButton{ width:65px; height:29px; background:url(../images/inputButton.jpg) 0px 0px no-repeat; cursor:pointer;}
 .your{  margin:0px 0 15px 0; background-color:#FFF; padding:0 1px 0 1px;}
 .display{  width:202px;  margin:0px; background-color:#febd21; padding:5px 0px;}
 .display h3{ color:#464646; font-size:12px; margin:0px;  text-align:center;}
 .ratio{ width:202px; background-color:#2aa3ce; padding:0px;}
-.ratioBottom{ width:202px; background:url(images/ratioButtomBg.png) 0px 0px no-repeat; height:13px; }
+.ratioBottom{ width:202px; background:url(../images/ratioButtomBg.png) 0px 0px no-repeat; height:13px; }
 .wide{ width:180px; margin-left:10px;}
 .wide p{ font-size:12px; color:#FFF; border-bottom:1px solid #2296bf; padding:7px 0 7px 10px;}
 .wide p.none{ border-bottom:none;}
@@ -87,17 +74,17 @@ p {}
 .logo img{ margin:0px;}
 .googleBanner{ width:734px; border:1px solid #cccccc; padding:2px;}
 .googleBanner img{ margin:0px;}
-.menuOuter{ width:100%;  background:url(images/menuBg.jpg) 0px 0px repeat-x; line-height:43px;}
+.menuOuter{ width:100%;  background:url(../images/menuBg.jpg) 0px 0px repeat-x; line-height:43px;}
 .menuInner{ max-width:1107px; margin: 0 auto;}
 .menu{}
 .menu ul{ padding:0px; margin:0px;}
-.menu ul li{ list-style:none; background:url(images/sprater.jpg)  center right no-repeat; float: left;}
+.menu ul li{ list-style:none; background:url(../images/sprater.jpg)  center right no-repeat; float: left;}
 .menu ul li a{ font-size:12px; color:#FFF; font-weight:bold; padding: 0 12px 0 12px;}
-.menu ul li a:hover{ background:url(images/hoverBg.jpg) 0px 0px repeat-x; color:#2aa3ce; padding: 16px 12px 14px 12px;}
-.menu ul li a.active{ background:url(images/hoverBg.jpg) 0px 0px repeat-x; color:#2aa3ce; padding: 16px 12px 14px 12px;}
+.menu ul li a:hover{ background:url(../images/hoverBg.jpg) 0px 0px repeat-x; color:#2aa3ce; padding: 16px 12px 14px 12px;}
+.menu ul li a.active{ background:url(../images/hoverBg.jpg) 0px 0px repeat-x; color:#2aa3ce; padding: 16px 12px 14px 12px;}
 .menu ul li.cl{ background:none;}
 .bodyArea{ width:100%; margin:0px;}
-.bodyInner, .content-area{ max-width:1107px; margin: 0 auto;}
+.bodyInner{ max-width:1107px; margin: 0 auto;}
 .lftBar{ width:785px; margin:0px;}
 .rightBar{ width:312px; margin:20px 0 0 0;}
 .categories{ width:194px; margin:0px;padding-top:20px;}
@@ -162,9 +149,9 @@ p {}
 .boxer p{ font-size:12px; color:#373737; margin-bottom:15px;}
 .recentpostOuter{ width:579px; }
 .recentpost{ width:567px; margin:0px 0 20px 0; border:1px solid #e8e8e8; border-right:none; }
-.recentbutton{ background:url(images/recentpostbutton.png) 0px 0px no-repeat; }
+.recentbutton{ background:url(../images/recentpostbutton.png) 0px 0px no-repeat; }
 .recentbutton a{ font-size:14px; font-weight:bold; color:#FFF; padding:11px 0 0 15px; width:154px; height:27px; display:block;}
-.recentbutton a:hover{  background:url(images/recentpostbutton-hover.png) 0px 0px no-repeat;  display:block;}
+.recentbutton a:hover{  background:url(../images/recentpostbutton-hover.png) 0px 0px no-repeat;  display:block;}
 
 .socialButton{ float:right; width:115px; margin:11px 0 0 0px; }
 .socialButton ul{ padding:0px; margin:0px;}
@@ -179,12 +166,8 @@ p {}
 .youCanLogin{ width:297px; margin:0px 0 0 0; background:#febd21; padding:15px 0 15px 15px;}
 .youCanLogin h4{ font-size:14px; color:#424242;}
 .login{ width:272px; margin:0px 0 10px 0; background:#2aa3ce; padding:20px 20px 20px 20px;}
-.username{ width:259px; margin:0px 0 15px 0; height:35px; background:url(images/userNameBg.jpg) 0px 0px repeat-x; border:none; outline: none; line-height:35px; padding-left:15px; font-size:14px; color:#aeaeae;}
-
-.widget_sidebarlogin #loginform #user_login, .widget_sidebarlogin #loginform #user_pass{
-	width:259px; margin:0px 0 15px 0; height:35px; background:url(images/userNameBg.jpg) 0px 0px repeat-x; border:none; outline: none; line-height:35px; padding-left:15px; font-size:14px; color:#aeaeae;
-}
-.loginButton,.button-primary{ width:63px; margin:0 20px 0 0px; background-color:#febd21;}
+.username{ width:259px; margin:0px 0 15px 0; height:35px; background:url(../images/userNameBg.jpg) 0px 0px repeat-x; border:none; outline: none; line-height:35px; padding-left:15px; font-size:14px; color:#aeaeae;}
+.loginButton{ width:63px; margin:0 20px 0 0px; background-color:#febd21;}
 .loginButton a{ font-size:14px; color:#454545; padding:8px 0px; display:block; text-align:center;}
 .loginButton a:hover{ background-color:#ddeff9; display:block;}
 .signup{ width:63px; margin:0 7px 0 0px; background-color:#0082b0;}
@@ -231,17 +214,17 @@ p {}
 .newsIn ul li{ list-style:none; float:left;  margin-bottom:10px; margin:0 7px 10px 7px; }
 .newsIn ul li img{ width:55px; border:2px solid #eaeaea;}
 .addborder02{ width:310px; border-bottom:4px solid #2aa3ce; height:7px; float:left;}
-.footer{ width:100%; margin:0px; background:url(images/footerBg.jpg) 0px 0px repeat-x; }
+.footer{ width:100%; margin:0px; background:url(../images/footerBg.jpg) 0px 0px repeat-x; }
 .footerInner{ width:1107px; margin: 0 auto;}
 .footerlogo{}
 .footerlogo img{ margin:35px 0 35px 0;}
-.footerMenu{ background:url(images/footerBgNavi.jpg) 0px 0px repeat-x; height:40px; }
+.footerMenu{ background:url(../images/footerBgNavi.jpg) 0px 0px repeat-x; height:40px; }
 .footerMenu ul{ padding:0px; margin:0px;}
-.footerMenu ul li{ list-style:none; background:url(images/sprater.jpg) center right no-repeat; float: left; line-height:40px;}
+.footerMenu ul li{ list-style:none; background:url(../images/sprater.jpg) center right no-repeat; float: left; line-height:40px;}
 .footerMenu ul li a{ font-size:12px; color:#FFF; font-weight:bold; padding: 0 12px 0 12px;}
-.footerMenu ul li a:hover{ background:url(images/hoverBg.jpg) 0px 0px repeat-x; color:#2aa3ce;padding:13px 12px 11px 12px;
+.footerMenu ul li a:hover{ background:url(../images/hoverBg.jpg) 0px 0px repeat-x; color:#2aa3ce;padding:13px 12px 11px 12px;
 } 
-.footerMenu ul li a.active{ background:url(images/hoverBg.jpg) 0px 0px repeat-x; color:#2aa3ce;  padding:13px 12px 11px 12px;
+.footerMenu ul li a.active{ background:url(../images/hoverBg.jpg) 0px 0px repeat-x; color:#2aa3ce;  padding:13px 12px 11px 12px;
 }
 .footerMenu ul li.cl{ background:none;}
 .postbottom{ width:566px; padding:5px 0 5px 0; background-color:#febd21; float:left; margin:10px 0 10px 0px;}
@@ -249,3 +232,4 @@ p {}
 .jPaginate{ margin:0 100px 0 0px;}
 .jPaginate a{ font-size:15px !important; color:#FFF !important;}
 .jPaginate a:hover{ background-color:#2aa3ce !important; }
+span.jPag-sprevious, span.jPag-sprevious-img {

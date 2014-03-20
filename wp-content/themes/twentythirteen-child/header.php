@@ -50,8 +50,13 @@
                         </div>
                         
                         <div class="inputOuter fRight clearfix">
-                        	<input name="" class="input fLeft" placeholder="Enter your search keywords here...." type="text" />
-                            <div class="inputButton fLeft"></div>
+                        	<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+                            <input class="input fLeft" placeholder="Enter your search keywords here...." type="text" value="<?php echo get_search_query();?>" name="s" id="s" / />
+                            
+                            <div class="inputButton fLeft" onClick="document.getElementById('searchform').submit();"></div>
+                        
+                        </form>
+                        
                         </div>
                         
                     </div>
@@ -73,7 +78,7 @@
                 <div class="logoOuter">
                 	
                     <div class="logoInner clearfix">
-                    	<div class="logo fLeft"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>-child/images/logo.png" alt="" /></a></div>
+                    	<div class="logo fLeft"><a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>-child/images/logo.png" alt="" /></a></div>
                         <div class="googleBanner fRight"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/googlebanner.jpg" alt="" /></a></div>
                     </div>
                     
@@ -83,7 +88,6 @@
                 
                <div class="menuInner">
                
-               <div class="menu clearfix">
                	
                 
                 <?php
@@ -94,7 +98,7 @@
 					'container'       => 'div',
 					'container_class' => 'menu clearfix',
 					'container_id'    => '',
-					'menu_class'      => 'menu',
+					'menu_class'      => '',
 					'menu_id'         => '',
 					'echo'            => true,
 					'fallback_cb'     => 'wp_page_menu',
@@ -110,23 +114,8 @@
 				wp_nav_menu( $defaults );
 				
 				?>
-                	<!--<ul>
-                    	<li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">HD Wallpapers</a></li>
-                        <li><a href="#">Mac Wallpapers</a></li>
-                        <li><a href="#">Female Celeb Female Celeb</a></li>
-                        <li><a href="#">Male Celeb</a></li>
-                        <li><a href="#">MotorBike</a></li>
-                        <li><a href="#">Hair Style</a></li>
-                        <li><a href="#">Animals</a></li>
-                        <li><a href="#">Flowers</a></li>
-                        <li><a href="#">Movies</a></li>
-                        <li><a href="#">Nature</a></li>
-                        <li><a href="#">Cars</a></li>
-                        <li class="cl"><a href="#">3D</a></li>
-                    </ul>-->
+                	
                
-               		</div>	
              	 </div>
               </div>
            </div>
