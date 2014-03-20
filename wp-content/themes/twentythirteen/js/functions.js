@@ -4,8 +4,8 @@
  * Provides helper functions to enhance the theme experience.
  */
 
-( function( $ ) {
-	var body    = $( 'body' ),
+jQuery(function($) {
+		var body    = $( 'body' ),
 	    _window = $( window );
 
 	/**
@@ -78,4 +78,4 @@
 			isRTL: body.is( '.rtl' )
 		} );
 	}
-} )( jQuery );
+});
