@@ -149,6 +149,14 @@
                                  
                                  
                                  <div class="beautiful">
+                                 
+                                 
+                                 	 <?php if ( is_active_sidebar( 'my-top-posts-box' ) ) : ?>
+                                        <ul id="my-top-posts-box-sidebar">
+                                            <?php dynamic_sidebar( 'my-top-posts-box' ); ?>
+                                        </ul>
+                                     <?php endif; ?>
+                                 
                                  	<ul>
                                     	<li>
                                    	    <img width="40" height="27" src="<?php echo get_template_directory_uri(); ?>-child/images/beautifulImg.jpg" alt=""> 
@@ -676,7 +684,7 @@
                                     <ul id="lang-sidebar">
                                         <?php dynamic_sidebar( 'my-login-box' ); ?>
                                     </ul>
-                <?php endif; ?>	
+               					 <?php endif; ?>	
                                  
                                     <?php if ( !is_user_logged_in() ) { ?>
                                     <div class="signup fLeft">
