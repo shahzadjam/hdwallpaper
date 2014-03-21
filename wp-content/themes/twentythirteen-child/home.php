@@ -337,23 +337,26 @@
                                 	<h2>2014 Porche Boxer by TechArt 2 Wallpapers</h2>
                                     <p>HD Wallpapers Inn Provides Best PC, Desktop and High Definition Wallpapers. We Upload a Great Collection Of HD Wallpapers 1080p Everyday in High Resolutions.</p>
                                 </div>
-                                
-                                <div class="recentpostOuter">
+   <?php
+   $my_query = new WP_Query("post_type=post&posts_per_page=1&orderby=date&order=DESC");
+   if ( $my_query->have_posts() ) { 
+       while ( $my_query->have_posts() ) { 
+           $my_query->the_post();
+		   ?>
+            <div class="recentpostOuter">
                               <div class="recentpost clearfix">
                                 	<div class="recentbutton fLeft"><a href="#">Recent Posts</a></div>
                                 	
                                   <div class="socialButton fRight">
                                    	  <ul>
-                                        	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/fb.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/twitter.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/linkendIn.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/google+.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/Prenters.png"  alt="" /></a></li>
+                                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/fb.png"  alt="" /></a></li>
+                                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/twitter.png"  alt="" /></a></li>
+                                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/linkendIn.png"  alt="" /></a></li>
+                                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/google+.png"  alt="" /></a></li>
+                                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/Prenters.png"  alt="" /></a></li>
                                     </ul>
                                 </div>
                                 </div>
-                                
-                                
                                 <div class="chrismis clearfix">
                       	<div class="chrismisBox fLeft">
                         
@@ -375,13 +378,25 @@
                         
                         <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
                         
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
+                        <h5><?php echo the_title();?></h5>
+                        <p><?php echo the_date();?></p>
                         
                         </div>
                                 </div>
+                                 </div>
+		   <?php
+           
+       }
+   }
+   wp_reset_postdata();
+   ?>
+   
+                               
                                 
-                               </div> 
+                                
+                                
+                                
+                               
                                
                                <div class="recentpostOuter">
                               <div class="recentpost clearfix">
