@@ -61,7 +61,7 @@
        <!-- wrapper end -->
        
 		<script type="text/javascript">
-		$(function() {
+		jQuery(document).ready(function($){
 			
 			
 			
