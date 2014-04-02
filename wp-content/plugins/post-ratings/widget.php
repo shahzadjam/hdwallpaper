@@ -388,10 +388,10 @@ if(class_exists('AtomWidget') && (defined('Atom::VERSION'))){
       $post_type  = post_type_exists($instance['post_type']) ? $instance['post_type'] : 'post';
       $sort       = isset($instance['sort']) ? esc_attr($instance['sort']) : 'bayesian_rating';
 
-      $output[] = $before_widget;
+      //$output[] = $before_widget;
 
-      if($title)
-        $output[] = $before_title.$title.$after_title;
+      //if($title)
+      //  $output[] = $before_title.$title.$after_title;
 
       $posts = PostRatings()->getTopRated(array(
         'post_type'  => $post_type,
@@ -402,31 +402,30 @@ if(class_exists('AtomWidget') && (defined('Atom::VERSION'))){
       ));
 
       if($posts){
-        $output[] = '<ul>';
 
         foreach($posts as $post){
           setup_postdata($post);
           $output[] = '<li>';
-          $output[] = '<a href="'.get_permalink().'">'.get_the_title().'</a>';
+		  $output[] = get_the_post_thumbnail( $post->ID, array(40,27));
+          $output[] = '<p style="width:112px;"><a href="'.get_permalink().'">'.get_the_title().'</a></p><div class="star">';
 
-          if($sort === 'votes')
+          /*if($sort === 'votes')
             $output[] =  '('.sprintf(_n('%d vote', '%d votes', $post->votes, PostRatings::ID), $post->votes, $post->votes).')';
 
-          elseif($sort === 'rating')
-            $output[] = sprintf('(%.2F)', $post->rating);
+          elseif($sort === 'rating')*/
+            $output[] = PostRatings()->getControl();
 
-          else
-            $output[] = sprintf('(%d%%)', (100 * ($post->bayesian_rating / $max_rating)));
+          /*else
+            $output[] = sprintf('(%d%%)', (100 * ($post->bayesian_rating / $max_rating)));*/
 
 
-          $output[] = '</li>';
+          $output[] = '</div></li>';
         }
 
-        $output[] = '</ul>';
         wp_reset_postdata();
       }
 
-      $output[] = $after_widget;
+     // $output[] = $after_widget;
 
       $output = implode("\n", $output);
 

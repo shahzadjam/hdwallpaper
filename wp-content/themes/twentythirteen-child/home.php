@@ -157,179 +157,18 @@
                                         </ul>
                                      <?php endif; ?>
                                  
-                                 	<ul>
-                                    	<li>
-                                   	    <img width="40" height="27" src="<?php echo get_template_directory_uri(); ?>-child/images/beautifulImg.jpg" alt=""> 
-                                        	<p><a href="#">Beautiful Christmas<br/>Scenes 2014</a>
-                                            <div class="star">
-                                            
-                                            <ul>
-                                            	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                            </ul>
-                                            	
-                                            </div>
-                                            </p>
-                                             
-                                        </li>
-                                        
-                                      
-                                       
-                                    </ul>
+                                 	
                                     
                                     
                                      
                                     
                                  </div>
-                                 <div class="beautiful">
-                                 	<ul>
-                                    	<li>
-                                   	    <img width="40" height="27" src="<?php echo get_template_directory_uri(); ?>-child/images/beautifulImg.jpg" alt=""> 
-                                        	<p><a href="#">Beautiful Christmas<br/>Scenes 2014</a>
-                                            <div class="star">
-                                            
-                                            <ul>
-                                            	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                            </ul>
-                                            	
-                                            </div>
-                                            </p>
-                                             
-                                        </li>
-                                        
-                                      
-                                       
-                                    </ul>
-                                    
-                                    
-                                     
-                                    
-                                 </div>
-                                 <div class="beautiful">
-                                 	<ul>
-                                    	<li>
-                                   	    <img width="40" height="27" src="<?php echo get_template_directory_uri(); ?>-child/images/beautifulImg.jpg" alt=""> 
-                                        	<p><a href="#">Beautiful Christmas<br/>Scenes 2014</a>
-                                            <div class="star">
-                                            
-                                            <ul>
-                                            	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                            </ul>
-                                            	
-                                            </div>
-                                            </p>
-                                             
-                                        </li>
-                                        
-                                      
-                                       
-                                    </ul>
-                                    
-                                    
-                                     
-                                    
-                                 </div>
-                                 <div class="beautiful">
-                                 	<ul>
-                                    	<li>
-                                   	    <img width="40" height="27" src="<?php echo get_template_directory_uri(); ?>-child/images/beautifulImg.jpg" alt=""> 
-                                        	<p><a href="#">Beautiful Christmas<br/>Scenes 2014</a>
-                                            <div class="star">
-                                            
-                                            <ul>
-                                            	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                            </ul>
-                                            	
-                                            </div>
-                                            </p>
-                                             
-                                        </li>
-                                        
-                                      
-                                       
-                                    </ul>
-                                    
-                                    
-                                     
-                                    
-                                 </div>
-                                 <div class="beautiful">
-                                 	<ul>
-                                    	<li>
-                                   	    <img width="40" height="27" src="<?php echo get_template_directory_uri(); ?>-child/images/beautifulImg.jpg" alt=""> 
-                                        	<p><a href="#">Beautiful Christmas<br/>Scenes 2014</a>
-                                            <div class="star">
-                                            
-                                            <ul>
-                                            	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                            </ul>
-                                            	
-                                            </div>
-                                            </p>
-                                             
-                                        </li>
-                                        
-                                      
-                                       
-                                    </ul>
-                                    
-                                    
-                                     
-                                    
-                                 </div>
-                                 <div class="beautiful">
-                                 	<ul>
-                                    	<li>
-                                   	    <img width="40" height="27" src="<?php echo get_template_directory_uri(); ?>-child/images/beautifulImg.jpg" alt=""> 
-                                        	<p><a href="#">Beautiful Christmas<br/>Scenes 2014</a>
-                                            <div class="star">
-                                            
-                                            <ul>
-                                            	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/star.png" width="10" height="10" alt="" /></a></li>
-                                            </ul>
-                                            	
-                                            </div>
-                                            </p>
-                                             
-                                        </li>
-                                        
-                                      
-                                       
-                                    </ul>
-                                    
-                                    
-                                     
-                                    
-                                 </div>
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
                                     
                                  </div>
                                  
@@ -346,58 +185,69 @@
                                     <p>HD Wallpapers Inn Provides Best PC, Desktop and High Definition Wallpapers. We Upload a Great Collection Of HD Wallpapers 1080p Everyday in High Resolutions.</p>
                                 </div>
    <?php
-   $my_query = new WP_Query("post_type=post&posts_per_page=1&orderby=date&order=DESC");
-   if ( $my_query->have_posts() ) { 
-       while ( $my_query->have_posts() ) { 
-           $my_query->the_post();
-		   ?>
-            <div class="recentpostOuter">
-                              <div class="recentpost clearfix">
-                                	<div class="recentbutton fLeft"><a href="#">Recent Posts</a></div>
-                                	
-                                  <div class="socialButton fRight">
-                                   	  <ul>
-                                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/fb.png"  alt="" /></a></li>
-                                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/twitter.png"  alt="" /></a></li>
-                                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/linkendIn.png"  alt="" /></a></li>
-                                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/google+.png"  alt="" /></a></li>
-                                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/Prenters.png"  alt="" /></a></li>
-                                    </ul>
-                                </div>
-                                </div>
-                                <div class="chrismis clearfix">
-                      	<div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5><?php echo the_title();?></h5>
-                        <p><?php echo the_date();?></p>
-                        
-                        </div>
-                                </div>
-                                 </div>
-		   <?php
-           
-       }
-   }
-   wp_reset_postdata();
-   ?>
+  
+                               
+									$args = array(
+										'type'                     => 'post',
+										'child_of'                 => 0,
+										'parent'                   => '',
+										'orderby'                  => 'name',
+										'order'                    => 'ASC',
+										'hide_empty'               => 1,
+										'hierarchical'             => 1,
+										'exclude'                  => '',
+										'include'                  => '',
+										'number'                   => '',
+										'taxonomy'                 => 'category',
+										'pad_counts'               => false 
+									
+									); 
+									
+									
+									 $categories = get_categories( $args ); 
+									
+									foreach($categories as $categor)
+									{
+							   
+					   $my_query = new WP_Query("post_type=post&cat=".$categor->cat_ID."&showposts=3&orderby=date&order=DESC");
+					   
+					   if ( $my_query->have_posts() ) { 
+						   while ( $my_query->have_posts() ) { 
+							   $my_query->the_post();
+							   ?>
+								<div class="recentpostOuter">
+												  <div class="recentpost clearfix">
+														<div class="recentbutton fLeft"><a href="#">Recent Posts</a></div>
+														
+													  <div class="socialButton fRight">
+														  <ul>
+															 <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/fb.png"  alt="" /></a></li>
+															 <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/twitter.png"  alt="" /></a></li>
+															 <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/linkendIn.png"  alt="" /></a></li>
+															 <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/google+.png"  alt="" /></a></li>
+															 <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/Prenters.png"  alt="" /></a></li>
+														</ul>
+													</div>
+													</div>
+													<div class="chrismis clearfix">
+										  
+											<div class="chrismisBox fLeft">
+											
+											<img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
+											
+											<h5><?php echo the_title().$categor->cat_ID;?></h5>
+											<p><?php echo the_date();?></p>
+											
+											</div>
+													</div>
+													 </div>
+							   <?php
+							   
+						   }
+					   }
+														}
+					   wp_reset_postdata();
+					   ?>
    
                                
                                 
@@ -540,7 +390,7 @@
                                 </div>
                                 
                                </div>
-                               
+                              
                                
                                <div class="recentpostOuter">
                               <div class="recentpost clearfix">
