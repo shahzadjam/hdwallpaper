@@ -23,3 +23,7 @@ $log_box_args = array(
 	'after_title'   => '</h2>' ); 
 	
 	register_sidebar($top_box_args);
+	if ( function_exists( 'add_image_size' ) ) { 
+	add_image_size( 'category-thumb', 300, 9999 ); //300 pixels wide (and unlimited height)
+	add_image_size( 'homepage-thumb', 181, 132, true ); //(cropped)
+}

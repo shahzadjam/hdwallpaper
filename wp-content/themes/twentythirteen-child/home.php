@@ -43,38 +43,48 @@
                                  
                                  <div class="alfa">
                                  	<ul>
-                                    	<li>
-                                   	    <img src="<?php echo get_template_directory_uri(); ?>-child/images/3dimg.jpg" width="40" height="27" alt="" /> 
-                                        	<p><a href="#">Acura</a></p>
+                                    <?php
+                                    $args = array(
+										'type'                     => 'post',
+										'child_of'                 => 0,
+										'parent'                   => '',
+										'orderby'                  => 'name',
+										'order'                    => 'ASC',
+										'hide_empty'               => 1,
+										'hierarchical'             => 1,
+										'exclude'                  => '',
+										'include'                  => '',
+										'number'                   => '',
+										'taxonomy'                 => 'category',
+										'pad_counts'               => false 
+									
+									); 
+									
+									
+									 $categories = get_categories( $args ); 
+									
+									foreach($categories as $categor)
+									{
+									?>
+                                    	<li> <?php							   
+					   $my_query = new WP_Query("post_type=post&cat=".$categor->cat_ID."&showposts=1&orderby=date&order=DESC");
+					   
+					   if ( $my_query->have_posts() ) { 
+						 while ( $my_query->have_posts() ) { 
+							$my_query->the_post();
+							if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+											  the_post_thumbnail(array(40));
+											} 
+							
+						 }
+						}?>
+                                   	   
+                                        	<p><a href="<?php echo $categor->slug;?>"><?php echo $categor->name;?></a></p>
                                         </li>
-                                        <li>
-                                   	    <img src="<?php echo get_template_directory_uri(); ?>-child/images/3dimg2.jpg" width="40" height="27" alt="" /> 
-                                        	<p><a href="#">Air Craft</a></p>
-                                        </li>
-                                        <li>
-                                   	    <img src="<?php echo get_template_directory_uri(); ?>-child/images/3dimg3.jpg" width="40" height="27" alt="" /> 
-                                        	<p><a href="#">Alfa Romeo</a></p>
-                                        </li>
-                                        <li>
-                                   	    <img src="<?php echo get_template_directory_uri(); ?>-child/images/3dimg4.jpg" width="40" height="27" alt="" /> 
-                                        	<p><a href="#">Animals</a></p>
-                                        </li>
-                                         <li>
-                                   	    <img src="<?php echo get_template_directory_uri(); ?>-child/images/3dimg5.jpg" width="40" height="27" alt="" /> 
-                                        	<p><a href="#">Anime</a></p>
-                                        </li>
-                                         <li>
-                                   	    <img src="<?php echo get_template_directory_uri(); ?>-child/images/3dimg6.jpg" width="40" height="27" alt="" /> 
-                                        	<p><a href="#">Aston Martin</a></p>
-                                        </li>
-                                         <li>
-                                   	    <img src="<?php echo get_template_directory_uri(); ?>-child/images/3dimg7.jpg" width="40" height="27" alt="" /> 
-                                        	<p><a href="#">Audi</a></p>
-                                        </li>
-                                         <li>
-                                   	    <img src="<?php echo get_template_directory_uri(); ?>-child/images/3dimg8.jpg" width="40" height="27" alt="" /> 
-                                        	<p><a href="#">Bedroom</a></p>
-                                        </li>
+                                        <?php
+									}
+										?>
+                                  
                                          <li>
                                    	    <img src="<?php echo get_template_directory_uri(); ?>-child/images/3dimg9.jpg" width="40" height="27" alt="" /> 
                                         	<p><a href="#">See more</a></p>
@@ -208,281 +218,49 @@
 									
 									foreach($categories as $categor)
 									{
-							   
-					   $my_query = new WP_Query("post_type=post&cat=".$categor->cat_ID."&showposts=3&orderby=date&order=DESC");
-					   
-					   if ( $my_query->have_posts() ) { 
-						   while ( $my_query->have_posts() ) { 
-							   $my_query->the_post();
-							   ?>
-								<div class="recentpostOuter">
-												  <div class="recentpost clearfix">
+										?>
+                                        <div class="recentpostOuter">
+												
+                                                  <div class="recentpost clearfix">
 														<div class="recentbutton fLeft"><a href="#">Recent Posts</a></div>
 														
 													  <div class="socialButton fRight">
-														  <ul>
-															 <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/fb.png"  alt="" /></a></li>
-															 <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/twitter.png"  alt="" /></a></li>
-															 <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/linkendIn.png"  alt="" /></a></li>
-															 <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/google+.png"  alt="" /></a></li>
-															 <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/Prenters.png"  alt="" /></a></li>
-														</ul>
+                                                      <?php echo do_shortcode('[hupso]');?>
+														  
 													</div>
 													</div>
-													<div class="chrismis clearfix">
-										  
+                                                    <div class='chrismis clearfix'>
+                                        <?php							   
+					   $my_query = new WP_Query("post_type=post&cat=".$categor->cat_ID."&showposts=3&orderby=date&order=DESC");
+					   
+					   if ( $my_query->have_posts() ) { 
+						 while ( $my_query->have_posts() ) { 
+							$my_query->the_post();?>
+                                            
 											<div class="chrismisBox fLeft">
 											
-											<img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
+											<?php 
+											if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+											  the_post_thumbnail('homepage-thumb');
+											} 
+											?>
+                                            
 											
-											<h5><?php echo the_title().$categor->cat_ID;?></h5>
+											<h5><a href="<?php echo the_permalink();?>"><?php echo the_title();?></a></h5>
 											<p><?php echo the_date();?></p>
 											
-											</div>
-													</div>
-													 </div>
-							   <?php
+											</div>												
+					   <?php
 							   
 						   }
 					   }
-														}
+					   ?>
+                       </div>
+                       </div>	                      
+                       <?php
+						}
 					   wp_reset_postdata();
 					   ?>
-   
-                               
-                                
-                                
-                                
-                                
-                               
-                               
-                               <div class="recentpostOuter">
-                              <div class="recentpost clearfix">
-                                	<div class="recentbutton fLeft"><a href="#">Recent Posts</a></div>
-                                	
-                                  <div class="socialButton fRight">
-                                   	  <ul>
-                                        	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/fb.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/twitter.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/linkendIn.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/google+.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/Prenters.png"  alt="" /></a></li>
-                                    </ul>
-                                </div>
-                                </div>
-                                
-                                
-                                <div class="chrismis clearfix">
-                      	<div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                                </div>
-                                
-                               </div>
-                               
-                               <div class="recentpostOuter">
-                              <div class="recentpost clearfix">
-                                	<div class="recentbutton fLeft"><a href="#">Recent Posts</a></div>
-                                	
-                                  <div class="socialButton fRight">
-                                   	  <ul>
-                                        	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/fb.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/twitter.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/linkendIn.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/google+.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/Prenters.png"  alt="" /></a></li>
-                                    </ul>
-                                </div>
-                                </div>
-                                
-                                
-                                <div class="chrismis clearfix">
-                      	<div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                                </div>
-                                
-                               </div>
-                               
-                               <div class="recentpostOuter">
-                              <div class="recentpost clearfix">
-                                	<div class="recentbutton fLeft"><a href="#">Recent Posts</a></div>
-                                	
-                                  <div class="socialButton fRight">
-                                   	  <ul>
-                                        	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/fb.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/twitter.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/linkendIn.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/google+.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/Prenters.png"  alt="" /></a></li>
-                                    </ul>
-                                </div>
-                                </div>
-                                
-                                
-                                <div class="chrismis clearfix">
-                      	<div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                                </div>
-                                
-                               </div>
-                              
-                               
-                               <div class="recentpostOuter">
-                              <div class="recentpost clearfix">
-                                	<div class="recentbutton fLeft"><a href="#">Recent Posts</a></div>
-                                	
-                                  <div class="socialButton fRight">
-                                   	  <ul>
-                                        	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/fb.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/twitter.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/linkendIn.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/google+.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/Prenters.png"  alt="" /></a></li>
-                                    </ul>
-                                </div>
-                                </div>
-                                
-                                
-                                <div class="chrismis clearfix">
-                      	<div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                                </div>
-                                
-                               </div>
-                               
-                               <div class="recentpostOuter">
-                              <div class="recentpost clearfix">
-                                	<div class="recentbutton fLeft"><a href="#">Recent Posts</a></div>
-                                	
-                                  <div class="socialButton fRight">
-                                   	  <ul>
-                                        	<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/fb.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/twitter.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/linkendIn.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/google+.png"  alt="" /></a></li>
-                                            <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/Prenters.png"  alt="" /></a></li>
-                                    </ul>
-                                </div>
-                                </div>
-                                
-                                
-                                <div class="chrismis clearfix">
-                      	<div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>-child/images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                        <p>15 December, 2013</p>
-                        
-                        </div>
-                                </div>
-                                
-                               </div>
-                              
-                             
                              <div class="postbottom">
                              
                              

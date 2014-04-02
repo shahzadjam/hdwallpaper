@@ -166,8 +166,8 @@ p {}
 .recentbutton{ background:url(images/recentpostbutton.png) 0px 0px no-repeat; }
 .recentbutton a{ font-size:14px; font-weight:bold; color:#FFF; padding:11px 0 0 15px; width:154px; height:27px; display:block;}
 .recentbutton a:hover{  background:url(images/recentpostbutton-hover.png) 0px 0px no-repeat;  display:block;}
-
-.socialButton{ float:right; width:115px; margin:11px 0 0 0px; }
+.home .hupso-share-buttons{ padding:0px!important;}
+.socialButton{ float:right; width:115px; margin:7px 0 0 0px; }
 .socialButton ul{ padding:0px; margin:0px;}
 .socialButton ul li{ list-style-type:none; width:16px; height:16px; margin:0 2px 0 3px; float:left; border-bottom:none;}
 .chrismis{width:579px; margin:0px; }
