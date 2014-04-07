@@ -1,0 +1,9 @@
+/*
+Theme Name: hdwallpaper
+Version: 1.0
+Description: A child theme of Twenty Fourteen
+Template: twentyfourteen
+*/
+
+@import url("../twentyfourteen/style.css");
+body{ background-color:#F6F;}

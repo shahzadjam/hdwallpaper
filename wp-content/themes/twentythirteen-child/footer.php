@@ -60,32 +60,7 @@
         </div>
        <!-- wrapper end -->
        
-		<script type="text/javascript">
-		jQuery(document).ready(function($){
-			
-			
-			
-			
-			$("#demo5").paginate({
-				count 		: 10,
-				start 		: 1,
-				display     : 7,
-				border					: false,
-				border_color			: '',
-				text_color  			: '',
-				background_color    	: '',	
-				border_hover_color		: '',
-				text_hover_color  		: '#fff',
-				background_hover_color	: '#2aa3ce', 
-				images					: false,
-				mouse					: 'press',
-				onChange     			: function(page){
-											$('._current','#paginationdemo').removeClass('_current').hide();
-											$('#p'+page).addClass('_current').show();
-										  }
-			});
-		});
-		</script>
+		
 <?php wp_footer(); ?>
 
 </body>
