@@ -376,3 +376,14 @@ span.jPag-sprevious, span.jPag-sprevious-img {
 	background-color: #2aa3ce;
 }
 #my-top-posts-box-sidebar .ratings .meta{ display:none;}
+.slider{
+	height:322px;
+	width:100%;
+}
+.slider img{
+	display: inline-block!important;}
+	
+.slidesjs-pagination,	
+.slidesjs-navigation{
+	display: none;
+}

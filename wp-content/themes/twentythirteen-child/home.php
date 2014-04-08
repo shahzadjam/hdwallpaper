@@ -28,9 +28,27 @@ get_header();
 		
 	  <div class="bannerOuter fRight">
 	  
-		<div class=" banner">
-		<img src="<?php echo get_template_directory_uri(); ?>-child/images/banner.jpg" width="569" height="303" alt="" /></div>
+		<div class="product-main-baner">
+        <div class="slider2">
+        <?php							   
+				$my_query_banner = new WP_Query("post_type=post&&showposts=5&orderby=date&order=DESC");
+				
+				if ( $my_query_banner->have_posts() ) { 
+				 while ( $my_query_banner->have_posts() ) { 
+					$my_query_banner->the_post();?>
+                    <?php 
+									if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+									  the_post_thumbnail('slider-thumb');
+									} 
+									?>
 		
+        <?php
+				 }
+		}
+		wp_reset_postdata();
+		?>
+        </div>
+		</div>
 		<div class="boxer">
 			<h2>2014 Porche Boxer by TechArt 2 Wallpapers</h2>
 			<p>HD Wallpapers Inn Provides Best PC, Desktop and High Definition Wallpapers. We Upload a Great Collection Of HD Wallpapers 1080p Everyday in High Resolutions.</p>

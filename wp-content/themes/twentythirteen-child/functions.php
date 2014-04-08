@@ -48,7 +48,8 @@ $log_box_args = array(
 	
 	if ( function_exists( 'add_image_size' ) ) { 
 	add_image_size( 'category-thumb', 300, 9999 ); //300 pixels wide (and unlimited height)
-	add_image_size( 'homepage-thumb', 181, 132, true ); //(cropped)
+	add_image_size( 'homepage-thumb', 181, 132, true );
+	add_image_size( 'slider-thumb', 569, 303, false ); //(cropped)
 }
 function wpbeginner_numeric_posts_nav() {
 

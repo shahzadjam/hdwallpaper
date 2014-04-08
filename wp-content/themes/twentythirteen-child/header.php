@@ -35,7 +35,31 @@
 
 <script src="<?php echo get_template_directory_uri(); ?>-child/jquery.paginate.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>-child/js/responsive.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>-child/js/slider.js" type="text/javascript"></script>
+<script>
+jQuery(document).ready(function($){
+$(".slider2").slidesjs({
+         play: {
+         active: true,
+         // [boolean] Generate the play and stop buttons.
+         // You cannot use your own buttons. Sorry.
+         effect: "slide",
+         // [string] Can be either "slide" or "fade".
+         interval: 5000,
+         // [number] Time spent on each slide in milliseconds.
+         auto: true,
+         // [boolean] Start playing the slideshow on load.
+         swap: false,
+         // [boolean] show/hide stop and play buttons
+         pauseOnHover: false,
+         // [boolean] pause a playing slideshow on hover
+         restartDelay: 2500
+         // [number] restart delay on inactive slideshow
+         }
+        });	
+});
 
+		</script>
 </head>
 
 <body <?php body_class(); ?>>
