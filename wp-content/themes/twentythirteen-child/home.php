@@ -31,7 +31,7 @@ get_header();
 		<div class="product-main-baner">
         <div class="slider2">
         <?php							   
-				$my_query_banner = new WP_Query("post_type=post&&showposts=5&orderby=date&order=DESC");
+				$my_query_banner = new WP_Query("post_type=post&&showposts=5&orderby=rand");
 				
 				if ( $my_query_banner->have_posts() ) { 
 				 while ( $my_query_banner->have_posts() ) { 
@@ -53,7 +53,7 @@ get_header();
 			<h2>2014 Porche Boxer by TechArt 2 Wallpapers</h2>
 			<p>HD Wallpapers Inn Provides Best PC, Desktop and High Definition Wallpapers. We Upload a Great Collection Of HD Wallpapers 1080p Everyday in High Resolutions.</p>
 		</div>
-<?php
+		<?php
 
 	   
 			$args = array(
@@ -77,7 +77,7 @@ get_header();
 			
 			foreach($categories as $categor)
 			{
-				?>
+	  ?>
 				<div class="recentpostOuter">
 						
 						  <div class="recentpost clearfix">
@@ -90,7 +90,7 @@ get_header();
 							</div>
 							<div class='chrismis clearfix'>
 				<?php							   
-				$my_query = new WP_Query("post_type=post&cat=".$categor->cat_ID."&showposts=3&orderby=date&order=DESC");
+				$my_query = new WP_Query("post_type=post&cat=".$categor->cat_ID."&showposts=3&orderby=rand");
 				
 				if ( $my_query->have_posts() ) { 
 				 while ( $my_query->have_posts() ) { 

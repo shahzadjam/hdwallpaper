@@ -24,7 +24,7 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
@@ -36,8 +36,34 @@
 <script src="<?php echo get_template_directory_uri(); ?>-child/jquery.paginate.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>-child/js/responsive.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>-child/js/slider.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/ui-lightness/jquery-ui.css">
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>-child/jquery.fileDownload-master/src/Scripts/jquery.fileDownload.js"></script>
 <script>
 jQuery(document).ready(function($){
+	
+	
+
+//
+// Simple rich user experience - jquery.fileDownload.js & jQuery UI Dialog
+// uses the optional "options" argument
+//
+//      the below uses jQuery "on" http://api.jquery.com/on/ (jQuery 1.7 + required, otherwise use "delegate" or "live") so that any
+//      <a class="fileDownload..."/> that is ever loaded into an Ajax site will automatically use jquery.fileDownload.js
+//      if you are using "on":
+//          you should generally be able to reduce the scope of the selector below "document" but it is used in this example so it
+//          works for possible dynamic manipulation in the entire DOM
+//
+$(document).on("click", "a.fileDownloadPromise", function () {
+	 $.fileDownload($(this).prop('href'))
+        .done(function () { alert('File download a success!'); })
+        .fail(function () { alert('File download failed!'); });
+ 
+    return false; //this is critical to stop the click event which will trigger a normal file download
+});	
+	
+	
+	
 $(".slider2").slidesjs({
          play: {
          active: true,

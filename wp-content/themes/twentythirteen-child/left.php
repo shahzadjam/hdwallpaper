@@ -46,7 +46,7 @@
 		while ( $my_query->have_posts() ) { 
 		$my_query->the_post();
 		if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-				  the_post_thumbnail(array(40));
+				  the_post_thumbnail('40x27-thumb');
 				} 
 		
 		}

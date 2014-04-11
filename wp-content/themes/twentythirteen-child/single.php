@@ -15,7 +15,11 @@ get_header(); ?>
                             	<div class="lftBar fLeft clearfix">
                             		  <?php get_sidebar( 'left' ); ?>
                                       <?php /* The loop */ ?>
-								<?php while ( have_posts() ) : the_post(); ?>
+								<?php 
+								global $post;
+								while ( have_posts() ) : the_post(); 
+								
+								?>
                               <div class="bannerOuter fRight">
                               <div class="recentpost clearfix recentpost-Categories">
                                 	<div ><a href="#"><?php the_title(); ?></a></div>
@@ -26,9 +30,12 @@ get_header(); ?>
                     
                               
                               	<div class="product-main-baner">
-                           	    <?php the_post_thumbnail('slider-thumb'); ?>
+                           	    <?php the_post_thumbnail('slider-thumb');
+								 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slider-thumb');
+								
+								?>
                                 
-                                <a href="#"><button>Download Spring wallpaper</button></a>
+                                <a class="fileDownloadPromise" href="<?php echo $large_image_url[0];?>"><?php echo $large_image_url[0];?></a>
                                 
                        
                                 	
@@ -51,7 +58,7 @@ get_header(); ?>
                                <P>Wide 5:3</P>
                                </div>
                                <div class="extra-produtct right">
-                               <P>00x600 1024x768 1152x864 1280x960 1400x1050 1440x1080 1600x1200</P>
+                               <P>800x600 1024x768 1152x864 1280x960 1400x1050 1440x1080 1600x1200</P>
                                  <p>1280x1024</p>
                                <p>960x600 1152x720 1280x800 1440x900 1680x1050 1920x1200</p>
                                  <p>
@@ -66,102 +73,77 @@ get_header(); ?>
                                   
                                 </div>
                        
-                               
+                                <div class="recentpostOuter">
                            
+                        <?php
+
+	   
+						$args = array(
+							'type'                     => 'post',
+							'child_of'                 => 0,
+							'parent'                   => '',
+							'orderby'                  => 'name',
+							'order'                    => 'ASC',
+							'hide_empty'               => 1,
+							'hierarchical'             => 1,
+							'exclude'                  => '',
+							'include'                  => '',
+							'number'                   => '',
+							'taxonomy'                 => 'category',
+							'pad_counts'               => false 
+						
+						); 
+						
+						
+						 $categories = get_categories( $args ); 
+						
+						foreach($categories as $categor)
+						{
+				  ?>    
                                
-                               
-                               
-                               
-                               
-                               <div class="recentpostOuter">
+                              
                               
                                 
                                 
                                 <div class="chrismis clearfix">
+                               <?php							   
+				$my_query = new WP_Query("post_type=post&cat=".$categor->cat_ID."&showposts=3&orderby=rand");
+				
+				if ( $my_query->have_posts() ) { 
+				 while ( $my_query->have_posts() ) { 
+					$my_query->the_post();?>
+                               
+                               
                                 <div class="chrismisBox fLeft">
                         
-                        <img src="images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        <h5>Beautiful Christmas Scenes</h5>
+                       <?php 
+									if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+									  the_post_thumbnail('homepage-thumb');
+									} 
+									?>
+                        <h5><a href="<?php echo the_permalink();?>"><?php echo the_title();?></a></h5>
                       
                         
                       
                         
                        </div>
-                      	
-                        <div class="chrismisBox fLeft">
                         
-                        <img src="images/chrismisImg.jpg" width="181" height="132" alt="" />
+                        <?php
+				 }
+						?>
                         
-                        <h5>Beautiful Christmas Scenes</h5>
-                       
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                     
-                        
-                        </div>
-                                </div>
-                                <div class="chrismis clearfix">
-                                <div class="chrismisBox fLeft">
-                        
-                        <img src="images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        <h5>Beautiful Christmas Scenes</h5>
-                       
-                        
-                      
-                        
-                       </div>
-                      	
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                       
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                      
-                        
-                        </div>
-                        <div class="chrismisBox fLeft seven">
-                        
-                        <img src="images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                      
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                      
-                        
-                        </div>
-                        <div class="chrismisBox fLeft">
-                        
-                        <img src="images/chrismisImg.jpg" width="181" height="132" alt="" />
-                        
-                        <h5>Beautiful Christmas Scenes</h5>
-                      
-                        
-                        </div>
                                 </div>
                                 
-                               </div>
+                                
+                              
                               
                              
-                               
+                               <?php
+				 
+				}
+				}
+				wp_reset_postdata();
+				?> </div>
                                 <?php endwhile; ?> 
                               </div>
                             
