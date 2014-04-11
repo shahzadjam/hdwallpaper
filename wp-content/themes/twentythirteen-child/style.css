@@ -1105,5 +1105,6 @@ span.jPag-sprevious, span.jPag-sprevious-img {
 .widget_sidebarlogin #loginform #user_login, .widget_sidebarlogin #loginform #user_pass{
 	width:259px; margin:0px 0 15px 0; height:35px; background:url(images/userNameBg.jpg) 0px 0px repeat-x; border:none; outline: none; line-height:35px; padding-left:15px; font-size:14px; color:#aeaeae;
 }
+.hupso-share-buttons{ padding:5px 0px 0px 0px!important;}
 .loginButton,.button-primary{ width:63px; margin:0 20px 0 0px; background-color:#febd21;}
 /*shahzad*/
