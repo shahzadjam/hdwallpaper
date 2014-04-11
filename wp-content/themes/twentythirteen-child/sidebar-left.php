@@ -81,10 +81,10 @@ $category_id = get_query_var('cat');
 		}
 	}
 	?>
-    	<li>
+    	<!--<li>
 		<img src="<?php echo get_template_directory_uri(); ?>-child/images/3dimg9.jpg" width="40" height="27" alt="" /> 
 			<p><a href="#">See more</a></p>
-		</li>
+		</li>-->
 	</ul>
 
 

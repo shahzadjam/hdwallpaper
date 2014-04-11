@@ -264,7 +264,7 @@ em {
 	color: #2aa3ce;
 	padding: 16px 12px 14px 12px;
 }
-.menu ul li a.active {
+.menu ul li.current-menu-item a{
 	background: url(images/hoverBg.jpg) 0px 0px repeat-x;
 	color: #2aa3ce;
 	padding: 16px 12px 14px 12px;

@@ -13,7 +13,7 @@
   <div class="footer clearfix">
                		<div class="footerInner clearfix">
                     	<div class="footerlogo fLeft">
-                   	    <a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/logo.png" width="294" height="79" alt="" /></a></div>
+                   	    <a href="<?php echo site_url();?>"><img src="<?php echo get_template_directory_uri(); ?>-child/images/logo.png" width="294" height="79" alt="" /></a></div>
                         
                       
                         
