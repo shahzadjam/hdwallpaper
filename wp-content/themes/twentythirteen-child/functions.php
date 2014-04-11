@@ -49,7 +49,16 @@ $log_box_args = array(
 	if ( function_exists( 'add_image_size' ) ) { 
 	add_image_size( 'category-thumb', 300, 9999 ); //300 pixels wide (and unlimited height)
 	add_image_size( 'homepage-thumb', 181, 132, true );
-	add_image_size( 'slider-thumb', 569, 303, false ); //(cropped)
+	add_image_size( '00x600-thumb', 00, 600 , true );
+	add_image_size( '1024x768-thumb', 1024, 768, true );
+	add_image_size( '1152x864-thumb', 1152, 864, true );
+	add_image_size( '1280x960-thumb', 1280, 960, true );
+	add_image_size( '1400x1050-thumb', 1400, 1050, true );
+	add_image_size( '1400x1050-thumb', 1400, 1050, true );
+	add_image_size( '1440x1080-thumb', 1440, 1080, true );
+	add_image_size( '1280x1024-thumb', 1280, 1024, true );
+	add_image_size( '1600x1200-thumb', 1600, 1200, true );
+	add_image_size( 'slider-thumb', 569, 303, true ); //(cropped)
 }
 function wpbeginner_numeric_posts_nav() {
 
