@@ -124,6 +124,4 @@ get_header(); ?>
     </div>
     <!--  bodyArea End  -->
     <!-- #primary -->
-
-<?php get_sidebar('right'); ?>
 <?php get_footer(); ?>
