@@ -111,18 +111,22 @@ if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Right') ) 
 <div class="news clearfix">
 <div class="newsIn">
 <ul>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>-child/images/newspic.jpg" alt="" /></li>
+  <?php							   
+				$my_query_banner = new WP_Query("post_type=post&showposts=12&orderby=rand");
+				
+				if ( $my_query_banner->have_posts() ) { 
+				 while ( $my_query_banner->have_posts() ) { 
+					$my_query_banner->the_post();?>
+    <li><?php 
+									if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+									  the_post_thumbnail('55x55-thumb');
+									} 
+									?></li>
+                                    <?php
+				 }
+		}
+		wp_reset_postdata();
+		?>
 </ul>
 
 </div>
