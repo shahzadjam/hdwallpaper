@@ -118,7 +118,13 @@ get_header(); ?>
                         
                        <?php 
 									if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+									 ?>
+                                      <a href="<?php echo the_permalink();?>">
+                                      <?php 
 									  the_post_thumbnail('homepage-thumb');
+									  ?>
+                                      </a>
+                                      <?php
 									} 
 									?>
                         <h5><a href="<?php echo the_permalink();?>"><?php echo the_title();?></a></h5>

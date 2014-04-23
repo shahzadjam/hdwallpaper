@@ -119,7 +119,12 @@ if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Right') ) 
 					$my_query_banner->the_post();?>
     <li><?php 
 									if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-									  the_post_thumbnail('55x55-thumb');
+									  
+									  ?>
+                                      <a href="<?php echo the_permalink();?>">
+                                      <?php the_post_thumbnail('55x55-thumb'); ?>
+                                      </a>
+									  <?php
 									} 
 									?></li>
                                     <?php

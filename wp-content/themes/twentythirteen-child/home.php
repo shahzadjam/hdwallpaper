@@ -38,7 +38,13 @@ get_header();
 					$my_query_banner->the_post();?>
                     <?php 
 									if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+									?>
+                                      <a href="<?php echo the_permalink();?>">
+                                      <?php 
 									  the_post_thumbnail('slider-thumb');
+									  ?>
+                                      </a>
+                                      <?php
 									} 
 									?>
 		
@@ -100,7 +106,14 @@ get_header();
 									
 									<?php 
 									if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+									?>
+                                      <a href="<?php echo the_permalink();?>">
+                                      <?php 
 									  the_post_thumbnail('homepage-thumb');
+									  ?>
+                                      </a>
+                                      
+                                      <?php
 									} 
 									?>
 									
@@ -120,7 +133,7 @@ get_header();
 }
 wp_reset_postdata();
 ?>
-<div class="postbottom">
+<!--<div class="postbottom">
     <div class="peginate clearfix">
         <div id="paginationdemo" class="demo">
             <div id="p1" class="pagedemo _current"></div>
@@ -138,7 +151,7 @@ wp_reset_postdata();
 </div>
 </div>
 	 
-</div> 
+</div>--> 
 </div>
 </div>
 </div>

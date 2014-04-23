@@ -69,7 +69,12 @@ $category_id = get_query_var('cat');
             
             
             if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                      the_post_thumbnail('40x27-thumb');
+                     ?>
+                     <a href="<?php echo site_url($categor->slug);?>">
+                     <?php the_post_thumbnail('40x27-thumb');
+					 ?>
+                     </a>
+                     <?php
                     } 
             
             }
