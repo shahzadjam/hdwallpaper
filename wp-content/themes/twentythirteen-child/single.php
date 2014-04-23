@@ -35,7 +35,7 @@ get_header(); ?>
 								
 								?>
                                 
-                                <a class="fileDownloadPromise" href="<?php echo $large_image_url[0];?>"><?php echo $large_image_url[0];?></a>
+                                <a class="fileDownloadPromise" href="<?php echo $large_image_url[0];?>">Download</a>
                                 
                        
                                 	

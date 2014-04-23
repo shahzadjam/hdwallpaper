@@ -406,7 +406,7 @@ if(class_exists('AtomWidget') && (defined('Atom::VERSION'))){
         foreach($posts as $post){
           setup_postdata($post);
           $output[] = '<li>';
-		  $output[] = get_the_post_thumbnail( $post->ID, '63x47-thumb');
+		  $output[] = '<a href="'.get_permalink().'">'.get_the_post_thumbnail( $post->ID, '63x47-thumb').'</a>';
           $output[] = '<p style="width:112px;"><a href="'.get_permalink().'">'.get_the_title().'</a></p><div class="star">';
 
           /*if($sort === 'votes')
