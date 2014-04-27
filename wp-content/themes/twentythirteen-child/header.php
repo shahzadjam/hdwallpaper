@@ -41,9 +41,11 @@
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>-child/jquery.fileDownload-master/src/Scripts/jquery.fileDownload.js"></script>
 <script>
 jQuery(document).ready(function($){
-	
-	
 
+var width = screen.width;
+var height = screen.height;
+
+$(".ratio").html('<div class="wide"><p>Aspect Ratio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wide</p><p class="none">Resolution :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+width+' X '+height+'</p></div>');
 //
 // Simple rich user experience - jquery.fileDownload.js & jQuery UI Dialog
 // uses the optional "options" argument
@@ -117,10 +119,7 @@ $(".slider2").slidesjs({
                         	<h3>Your Display Features</h3>
                         </div>
                         <div class="ratio">
-                       		<div class="wide">
-                            	<p>Aspect Ratio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wide</p>
-                                <p class="none">Resolution :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1400 X 1900</p>
-                            </div>
+                       		
                              
                         </div>
                        <div class="ratioBottom"></div>

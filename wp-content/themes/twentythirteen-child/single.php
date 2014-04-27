@@ -23,7 +23,6 @@ get_header(); ?>
                               <div class="bannerOuter fRight">
                               <div class="recentpost clearfix recentpost-Categories">
                                 	<div ><a href="#"><?php the_title(); ?></a></div>
-                                	
                                   
                                 </div>
                               
@@ -32,6 +31,7 @@ get_header(); ?>
                               	<div class="product-main-baner">
                            	    <?php the_post_thumbnail('slider-thumb');
 								 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slider-thumb');
+								  $large_image_full = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
 								
 								?>
                                 
@@ -58,11 +58,11 @@ get_header(); ?>
                                <P>Wide 5:3</P>
                                </div>
                                <div class="extra-produtct right">
-                               <P>800x600 1024x768 1152x864 1280x960 1400x1050 1440x1080 1600x1200</P>
-                                 <p>1280x1024</p>
-                               <p>960x600 1152x720 1280x800 1440x900 1680x1050 1920x1200</p>
+                               <P><a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=800&h=600&a=t">800x600</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1024&h=786&a=t">1024x768</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1152&h=864&a=t">1152x864</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1280&h=960&a=t">1280x960</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1400&h=1050&a=t">1400x1050</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1440&h=1080&a=t">1440x1080</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1600&h=1200&a=t">1600x1200</a></P>
+                                 <p><a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1280&h=1024&a=t">1280x1024</a></p>
+                               <p><a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=960&h=600&a=t">960x600</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1152&h=720&a=t">1152x720</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1280&h=800&a=t">1280x800</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1440&h=900&a=t">1440x900</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1680&h=1050&a=t">1680x1050</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1920&h=1200&a=t">1920x1200</a></p>
                                  <p>
-                                     800x480 1280x768 </p>
+                                     <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=800&h=480&a=t">800x480</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1280&h=786&a=t">1280x768</a> </p>
                                </div>
                                </div>
       						<?php the_content(); ?>
