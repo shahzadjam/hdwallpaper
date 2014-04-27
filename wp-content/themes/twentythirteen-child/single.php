@@ -26,7 +26,6 @@ get_header(); ?>
                                   
                                 </div>
                               
-                    
                               
                               	<div class="product-main-baner">
                            	    <?php the_post_thumbnail('slider-thumb');
