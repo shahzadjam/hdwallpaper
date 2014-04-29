@@ -34,7 +34,7 @@ get_header(); ?>
 								
 								?>
                                 
-                                <a class="fileDownloadPromise" href="<?php echo $large_image_url[0];?>">Download</a>
+                                <a onclick="window.open('<?php echo $large_image_url[0];?>')" href="javascript:void(0)">Download</a>
                                 
                        
                                 	
