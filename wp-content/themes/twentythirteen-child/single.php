@@ -37,7 +37,9 @@ get_header(); ?>
                                 <a onclick="window.open('<?php echo $large_image_url[0];?>')" href="javascript:void(0)">Download</a>
                                 
                        
-                                	
+                                	<form id="download_photo" name="download_photo" method="post" enctype="multipart/form-data">
+                                    <input title="text" name="download_photo_url" id="download_photo_url" />
+                                    </form>
                                 </div>
                                 <div class="extra-links">
                                 <ul>

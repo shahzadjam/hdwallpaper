@@ -65,8 +65,31 @@ $(document).on("click", "a.fileDownloadPromise", function () {
  
     return false; //this is critical to stop the click event which will trigger a normal file download
 });	
+
+$( ".extra-produtct a" ).click(function( event ) {
+	event.preventDefault();
+	alert("Please Wait");
+	$("#download_photo_url").val($(this).attr("href"));
+	
+	$url = "http://localhost/hdwallpaper/download.php?file="+encodeURI($(this).attr("href"));
+        $.ajax({
+            type: 'GET',
+            url: $url,
+            success: function(data){
+                   if(data == true){
+                    alert('This file is not available for download.');
+                   }else{
+                    window.location =""+$url+"";
+                   }
+            }
+         
+        })
 	
 	
+	document.body.innerHTML += "<iframe src='" + $(this).attr("href") + "' style='display: none;' ></iframe>";
+
+
+});
 	
 $(".slider2").slidesjs({
          play: {
