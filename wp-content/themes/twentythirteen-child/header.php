@@ -43,14 +43,17 @@
 jQuery(document).ready(function($){
 
 		
-    $('.hdwide ul ul').hide();
-    $('.hdwide ul active').show(); 
+    //$('.hdwide ul ul').hide(); 
     $('.hdwide ul li img').click(function() {
-		 $('.hdwide ul ul').hide();
+		$('.hdwide ul ul').hide(); 
+		var id = $(this).attr('id');
+		
+		
+		$("#ul_"+id+"").show();
 		/*if(!$(this).hasClass('active')){ 
 			$(this).hide();
 		}*/
-        $(this).parent().find('.hdwide ul ul').toggle('slow');
+       /* $(this).parent().find('.hdwide ul ul').toggle('slow');*/
     });
 
 

@@ -145,10 +145,10 @@ $terms_p = get_terms("resolution",$args);
 			 $term_p = sanitize_term( $term_p, 'resolution' );
 
     		$term_p_link = get_term_link( $term_p, 'resolution' );
-			 
+			$term_id = $term_p->term_id;
 			 ?>
                 <li>
-                <img width="40" height="27" alt="" src="<?php echo get_template_directory_uri(); ?>-child/images/arrow.jpg"> 
+                <img width="40" height="27" alt="" id="box_<?php echo $term_id?>" src="<?php echo get_template_directory_uri(); ?>-child/images/arrow.jpg"> 
                     <p><a href="<?php echo $term_p_link; ?>"><?php echo $term_p->name; ?></a></p>
                 </li>
 				<?php
@@ -158,14 +158,16 @@ $terms_p = get_terms("resolution",$args);
 			$termchildren = get_term_children( $term_id, $taxonomy_name );
 			if(!empty($termchildren))
 			{
-				echo "<ul class='children'>";
+				echo "<ul class='children' style='display:none' id='ul_box_".$term_id."'>";
 			
 				foreach ( $termchildren as $child ) {
 					$term = get_term_by( 'id', $child, $taxonomy_name );
-					
+					$term = sanitize_term( $term, 'resolution' );
+
+    				$term_link = get_term_link( $term, 'resolution' );
 					?>
 					<li>
-						<p><a href="<?php echo $term->name; ?>"><?php echo $term->name; ?></a></p>
+						<p><a href="<?php echo $term_link; ?>"><?php echo $term->name; ?></a></p>
 					</li>
 					<?php
 					
@@ -178,31 +180,7 @@ $terms_p = get_terms("resolution",$args);
 	 } 
 
 ?>
-    
-    <li>
-    <img width="40" height="27" alt="" src="<?php echo get_template_directory_uri(); ?>-child/images/arrow.jpg"> 
-        <p><a href="#">HD</a></p>
-    </li>
-    <li>
-    <img width="40" height="27" alt="" src="<?php echo get_template_directory_uri(); ?>-child/images/arrow.jpg"> 
-        <p><a href="#">Standard</a></p>
-    </li>
-    <li>
-    <img width="40" height="27" alt="" src="<?php echo get_template_directory_uri(); ?>-child/images/arrow.jpg"> 
-        <p><a href="#">Mobile Ratio</a></p>
-    </li>
-     <li>
-    <img width="40" height="27" alt="" src="<?php echo get_template_directory_uri(); ?>-child/images/arrow.jpg"> 
-        <p><a href="#">Iphone Brands </a></p>
-    </li>
-     <li>
-    <img width="40" height="27" alt="" src="<?php echo get_template_directory_uri(); ?>-child/images/arrow.jpg"> 
-        <p><a href="#">Dual</a></p>
-    </li>
-     <li>
-    <img width="40" height="27" alt="" src="<?php echo get_template_directory_uri(); ?>-child/images/arrow.jpg"> 
-        <p><a href="#">Other</a></p>
-    </li>
+  
    
 </ul>
 
