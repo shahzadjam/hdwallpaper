@@ -42,6 +42,16 @@
 <script>
 jQuery(document).ready(function($){
 
+		
+    $('.hdwide ul ul').hide();
+    $('.hdwide ul active').show(); 
+    $('.hdwide ul li img').click(function() {
+		 $('.hdwide ul ul').hide();
+		/*if(!$(this).hasClass('active')){ 
+			$(this).hide();
+		}*/
+        $(this).parent().find('.hdwide ul ul').toggle('slow');
+    });
 
 
 var width = screen.width;

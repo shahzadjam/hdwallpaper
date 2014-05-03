@@ -114,10 +114,71 @@ $category_id = get_query_var('cat');
 
 <div class="hdwide">
 <ul>
-    <li>
-    <img width="40" height="27" alt="" src="<?php echo get_template_directory_uri(); ?>-child/images/arrow.jpg"> 
-        <p><a href="#">Wide</a></p>
-    </li>
+<?php
+
+$args = array(
+    'orderby'       => 'name', 
+    'order'         => 'ASC',
+    'hide_empty'    => true, 
+    'exclude'       => array(), 
+    'exclude_tree'  => array(), 
+    'include'       => array(),
+    'number'        => '', 
+    'fields'        => 'all', 
+    'slug'          => '', 
+    'parent'         => 0,
+    'hierarchical'  => true, 
+    'child_of'      => 0, 
+    'get'           => '', 
+    'name__like'    => '',
+    'pad_counts'    => false, 
+    'offset'        => '', 
+    'search'        => '', 
+    'cache_domain'  => 'core'
+); 
+
+$terms_p = get_terms("resolution",$args);
+
+	 if ( !empty( $terms_p ) && !is_wp_error( $terms_p ) ){
+		 
+		 foreach ( $terms_p as $term_p ) {
+			 $term_p = sanitize_term( $term_p, 'resolution' );
+
+    		$term_p_link = get_term_link( $term_p, 'resolution' );
+			 
+			 ?>
+                <li>
+                <img width="40" height="27" alt="" src="<?php echo get_template_directory_uri(); ?>-child/images/arrow.jpg"> 
+                    <p><a href="<?php echo $term_p_link; ?>"><?php echo $term_p->name; ?></a></p>
+                </li>
+				<?php
+			 
+		    $term_id = $term_p->term_id;
+			$taxonomy_name = 'resolution';
+			$termchildren = get_term_children( $term_id, $taxonomy_name );
+			if(!empty($termchildren))
+			{
+				echo "<ul class='children'>";
+			
+				foreach ( $termchildren as $child ) {
+					$term = get_term_by( 'id', $child, $taxonomy_name );
+					
+					?>
+					<li>
+						<p><a href="<?php echo $term->name; ?>"><?php echo $term->name; ?></a></p>
+					</li>
+					<?php
+					
+					
+				}
+				echo "</ul>";
+			}
+							
+		 }
+	 } 
+
+?>
+    
     <li>
     <img width="40" height="27" alt="" src="<?php echo get_template_directory_uri(); ?>-child/images/arrow.jpg"> 
         <p><a href="#">HD</a></p>
