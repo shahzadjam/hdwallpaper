@@ -38,7 +38,7 @@ get_header(); ?>
                                 
                        
                                 	<form id="download_photo" name="download_photo" method="post" enctype="multipart/form-data">
-                                    <input title="hidden" name="download_photo_url" id="download_photo_url" />
+                                    <input type="hidden" title="hidden" name="download_photo_url" id="download_photo_url" />
                                     </form>
                                 </div>
                                 <div class="extra-links">
