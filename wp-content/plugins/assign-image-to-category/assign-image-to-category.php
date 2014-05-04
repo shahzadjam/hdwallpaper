@@ -13,7 +13,10 @@ function dwallpaper_project_updated_set_term( $post_id ) {
 	 $large_image_full = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'full');
 	
 	 $terms_p = get_terms("resolution");
-
+	
+	if(!empty($large_image_full))
+	{
+	
 	 if ( !empty( $terms_p ) && !is_wp_error( $terms_p ) ){
 		 
 		 foreach ( $terms_p as $term_p ) {
@@ -45,6 +48,6 @@ function dwallpaper_project_updated_set_term( $post_id ) {
 		 }
 	 } 
 	
-
+	}
 }
 add_action( 'save_post', 'dwallpaper_project_updated_set_term' );
