@@ -88,7 +88,37 @@
                     alert("Please Wait");
                     $("#download_photo_url").val($(this).attr("href"));
 
-                    $url = "http://localhost/hdwallpaper/download.php?file=" + encodeURI($(this).attr("href"));
+
+					//$("#secretIFrame").attr("src","download.php?download_file=" + encodeURI($(this).attr("href")+"");
+
+                    $url = "<?php echo site_url("/")?>download.php?download_file=" + encodeURI($(this).attr("href"));
+                    $.ajax({
+                        type: 'GET',
+                        url: $url,
+                        success: function(data) {
+                            if (data == true) {
+                                alert('This file is not available for download.');
+                            } else {
+                                window.location = "" + $url + "";
+                            }
+                        }
+
+                    })
+
+
+                    document.body.innerHTML += "<iframe src='" + $(this).attr("href") + "' style='display: none;' ></iframe>";
+
+
+                });
+				$(".product-main-baner a").click(function(event) {
+                    event.preventDefault();
+                    alert("Please Wait");
+                    $("#download_photo_url").val($(this).attr("href"));
+
+
+					//$("#secretIFrame").attr("src","download.php?download_file=" + encodeURI($(this).attr("href")+"");
+
+                    $url = "<?php echo site_url("/")?>download.php?download_file=" + encodeURI($(this).attr("href"));
                     $.ajax({
                         type: 'GET',
                         url: $url,

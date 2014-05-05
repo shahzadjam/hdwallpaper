@@ -31,10 +31,11 @@ get_header(); ?>
                            	    <?php the_post_thumbnail('slider-thumb');
 								 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slider-thumb');
 								  $large_image_full = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+								  
 								
 								?>
                                 
-                                <a onclick="window.open('<?php echo $large_image_url[0];?>')" href="javascript:void(0)">Download</a>
+                                <a href="<?php echo $large_image_url[0];?>&w=569&h=303" href="javascript:void(0)">Download</a>
                                 
                        
                                 	<form id="download_photo" name="download_photo" method="post" enctype="multipart/form-data">
@@ -58,13 +59,74 @@ get_header(); ?>
                                <P>Wide 16:10</P>
                                <P>Wide 5:3</P>
                                </div>
-                               <div class="extra-produtct right">
-                               <P><a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=800&h=600&a=t">800x600</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1024&h=786&a=t">1024x768</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1152&h=864&a=t">1152x864</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1280&h=960&a=t">1280x960</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1400&h=1050&a=t">1400x1050</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1440&h=1080&a=t">1440x1080</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1600&h=1200&a=t">1600x1200</a></P>
-                                 <p><a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1280&h=1024&a=t">1280x1024</a></p>
-                               <p><a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=960&h=600&a=t">960x600</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1152&h=720&a=t">1152x720</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1280&h=800&a=t">1280x800</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1440&h=900&a=t">1440x900</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1680&h=1050&a=t">1680x1050</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1920&h=1200&a=t">1920x1200</a></p>
-                                 <p>
-                                     <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=800&h=480&a=t">800x480</a> <a href="<?php echo get_template_directory_uri(); ?>-child/timthumb.php?src=<?php echo $large_image_full[0];?>&w=1280&h=786&a=t">1280x768</a> </p>
-                               </div>
+                                                             
+                               <?php
+
+$args = array(
+    'orderby'       => 'name', 
+    'order'         => 'ASC',
+    'hide_empty'    => true, 
+    'exclude'       => array(), 
+    'exclude_tree'  => array(), 
+    'include'       => array(),
+    'number'        => '', 
+    'fields'        => 'all', 
+    'slug'          => '', 
+    'parent'         => 0,
+    'hierarchical'  => true, 
+    'child_of'      => 0, 
+    'get'           => '', 
+    'name__like'    => '',
+    'pad_counts'    => false, 
+    'offset'        => '', 
+    'search'        => '', 
+    'cache_domain'  => 'core'
+); 
+
+$terms_p = get_terms("resolution",$args);
+
+	 if ( !empty( $terms_p ) && !is_wp_error( $terms_p ) ){
+		 
+		 foreach ( $terms_p as $term_p ) {
+			 $term_p = sanitize_term( $term_p, 'resolution' );
+
+    		$term_p_link = get_term_link( $term_p, 'resolution' );
+			$term_id = $term_p->term_id;
+			 ?>
+                <P><?php echo $term_p->name?></P>
+				<?php
+			 
+		    $term_id = $term_p->term_id;
+			$taxonomy_name = 'resolution';
+			$termchildren = get_term_children( $term_id, $taxonomy_name );
+			if(!empty($termchildren))
+			{
+				?>
+                <div class="extra-produtct right">
+                               <P>
+                <?php
+			
+				foreach ( $termchildren as $child ) {
+					$term = get_term_by( 'id', $child, $taxonomy_name );
+					$term = sanitize_term( $term, 'resolution' );
+
+    				$term_link = get_term_link( $term, 'resolution' );
+					
+					$dimention = explode("X",$term->name);
+					?>
+						<a href="<?php echo $large_image_full[0];?>&w=<?php echo $dimention[0];?>&h=<?php echo $dimention[1];?>"><?php echo $term->name; ?></a>
+					
+					<?php
+					
+					
+				}
+				echo "</p></div>";
+			}
+							
+		 }
+	 } 
+
+?>
                                </div>
       						<?php the_content(); ?>
                           
