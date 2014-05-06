@@ -29,7 +29,12 @@ $category_id = get_query_var('cat');
     
     <div class="recentpostOuter">
                                   
-     <?php if ( have_posts() ) : ?>
+     <?php 
+	 if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
+				elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
+				else { $paged = 1; }
+				query_posts('posts_per_page=36&cat='.$category_id.'&paged=' . $paged);
+	 if ( have_posts() ) : ?>
      <div class="Categories">
      <header class="page-header">
     
@@ -49,13 +54,37 @@ $category_id = get_query_var('cat');
     <?php /* The loop */ ?>
     <div id="jpages-table">
                 <?php 
-				if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
-				elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
-				else { $paged = 1; }
-				query_posts('posts_per_page=36&cat='.$category_id.'&paged=' . $paged); 
+				
+				$i=1;
+				$j=0;
+				
+				 
 				while ( have_posts() ) : the_post(); 
 			
+				if($i > 3 || $j==0)
+				{
+					$i=1;
+					$j=1;
+				?>
+                    <div class="chrismis clearfix">
+				<?php
+				}
+				?>
+               <?php 
 			   get_template_part( 'content', get_post_format() );
+				
+				
+				if($i==3)
+				{
+					$i++;
+				?>
+					</div>
+				<?php
+				}
+				else
+				{
+					$i++;
+				}
 				
 				 endwhile; ?>
     <?php else : ?>
