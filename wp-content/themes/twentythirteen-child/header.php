@@ -39,16 +39,13 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
         <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/ui-lightness/jquery-ui.css">
         <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>-child/jquery.fileDownload-master/src/Scripts/jquery.fileDownload.js"></script>
+        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>-child/js/detectmobilebrowser.js"></script>
         <script>
             jQuery(document).ready(function($) {
-
-
                 //$('.hdwide ul ul').hide(); 
                 $('.hdwide ul li img').click(function() {
                     $('.hdwide ul ul').hide();
                     var id = $(this).attr('id');
-
-
                     $("#ul_" + id + "").show();
                     /*if(!$(this).hasClass('active')){ 
                      $(this).hide();
@@ -73,12 +70,12 @@
                 //
                 $(document).on("click", "a.fileDownloadPromise", function() {
                     $.fileDownload($(this).prop('href'))
-                            .done(function() {
-                                alert('File download a success!');
-                            })
-                            .fail(function() {
-                                alert('File download failed!');
-                            });
+                    .done(function() {
+                        alert('File download a success!');
+                    })
+                    .fail(function() {
+                        alert('File download failed!');
+                    });
 
                     return false; //this is critical to stop the click event which will trigger a normal file download
                 });
@@ -89,9 +86,9 @@
                     $("#download_photo_url").val($(this).attr("href"));
 
 
-					//$("#secretIFrame").attr("src","download.php?download_file=" + encodeURI($(this).attr("href")+"");
+                    //$("#secretIFrame").attr("src","download.php?download_file=" + encodeURI($(this).attr("href")+"");
 
-                    $url = "<?php echo site_url("/")?>download.php?download_file=" + encodeURI($(this).attr("href"));
+                    $url = "<?php echo site_url("/") ?>download.php?download_file=" + encodeURI($(this).attr("href"));
                     $.ajax({
                         type: 'GET',
                         url: $url,
@@ -110,15 +107,15 @@
 
 
                 });
-				$(".product-main-baner a").click(function(event) {
+                $(".product-main-baner a").click(function(event) {
                     event.preventDefault();
                     alert("Please Wait");
                     $("#download_photo_url").val($(this).attr("href"));
 
 
-					//$("#secretIFrame").attr("src","download.php?download_file=" + encodeURI($(this).attr("href")+"");
+                    //$("#secretIFrame").attr("src","download.php?download_file=" + encodeURI($(this).attr("href")+"");
 
-                    $url = "<?php echo site_url("/")?>download.php?download_file=" + encodeURI($(this).attr("href"));
+                    $url = "<?php echo site_url("/") ?>download.php?download_file=" + encodeURI($(this).attr("href"));
                     $.ajax({
                         type: 'GET',
                         url: $url,
@@ -154,7 +151,7 @@
                         pauseOnHover: false,
                         // [boolean] pause a playing slideshow on hover
                         restartDelay: 2500
-                                // [number] restart delay on inactive slideshow
+                        // [number] restart delay on inactive slideshow
                     }
                 });
             });
@@ -167,7 +164,8 @@
                 var h = screen.height;
                 var r = gcd(w, h);
                 var resolution = w / r + ":" + h / r;
-                var ret = [w, h, r, resolution, asp_ratio(resolution)];
+                var ratio = (jQuery.browser.mobile) ? 'Mobile' : asp_ratio(resolution);
+                var ret = [w, h, r, resolution, ratio];
                 return ret;
 
             }
