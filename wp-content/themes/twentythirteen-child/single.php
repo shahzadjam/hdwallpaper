@@ -34,7 +34,7 @@ get_header(); ?>
 								  $large_image_full = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
 								?>
                                 
-                                <a href="<?php echo $large_image_url[0];?>&w=569&h=303"><button>Download</button></a>
+                                <a href="<?php echo $large_image_url[0];?>&w=569&h=303"><button>Download <?php the_title(); ?></button></a>
                                 
                        
                                 	<form id="download_photo" name="download_photo" method="post" enctype="multipart/form-data">
