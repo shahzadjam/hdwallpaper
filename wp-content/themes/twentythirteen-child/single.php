@@ -126,8 +126,14 @@ $terms_p = get_terms("resolution",$args);
 	 } 
 
 ?>
-                               </div>
-      						<?php the_content(); ?>
+                               </div> 
+                               <div class="product-main-baner content-area">
+                           	   
+                                
+                       
+                                	<?php the_content(); ?>
+                              
+                                </div>
                           
                           <div class="recentpost clearfix">
                                 	<div class="recentpost-product"><a href="#">Related wallpaper</a></div>
@@ -192,13 +198,7 @@ $my_query = new WP_Query( array( 'post_type'=>'post','cat'=>$categories[0]->term
 				?> </div>
                                 <?php endwhile; ?> 
                               </div>
-                              <div class="product-main-baner content-area">
-                           	   
-                                
-                       
-                                	<?php the_content(); ?>
-                              
-                                </div>
+                             
                             
                            </div>
                             
