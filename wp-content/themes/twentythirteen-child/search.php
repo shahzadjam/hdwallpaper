@@ -8,9 +8,7 @@
  */
 
 get_header(); ?>
-
-
-<!--  bodyArea start  -->
+ <!--  bodyArea start  -->
              
 <div class="bodyArea">
 	<div class="bodyInner clearfix">
@@ -18,86 +16,35 @@ get_header(); ?>
                             	
 <?php get_sidebar('left'); ?>
 
-
-
-    <div class="bannerOuter fRight">
+	<div class="bannerOuter fRight">
     
     
     <div class="recentpostOuter">
-                                  
-     <?php 
-	 
-	 if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
-	 elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
-	 else { $paged = 1; }
-	 query_posts('posts_per_page=36&paged=' . $paged); 
-	 if ( have_posts() ) : ?>
-    <div class="Categories">
-    
-    <div class="recentpost clearfix">
-        <div class="recentpost-Categories"><a href="#"><?php printf( __( 'Search Results for: %s', 'twentythirteen' ), get_search_query() ); ?></a></div>
-        
-      
-    </div>
-  
-    
-    
-    
-    </div>
-    <?php /* The loop */ ?>
-    <div id="jpages-table">
-                <?php /* The loop */ ?>
-			<?php 
-			$i=1;
-				$j=0;
-			
-			while ( have_posts() ) : the_post(); 
-			if($i > 3 || $j==0)
-			{
-				$i=1;
-				$j=1;
-			?>
-				<div class="chrismis clearfix">
-			<?php
-			}
-				?>
+
+		<?php if ( have_posts() ) : ?>
+
+			<header class="page-header">
+				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentythirteen' ), get_search_query() ); ?></h1>
+			</header>
+
+			<?php /* The loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php 
-			 if($i==3)
-				{
-					$i++;
-				?>
-					</div>
-				<?php
-				}
-				else
-				{
-					$i++;
-				}
-			
-			
-			endwhile; ?>
+			<?php endwhile; ?>
 
+			<?php twentythirteen_paging_nav(); ?>
+
+		<?php else : ?>
+			<?php get_template_part( 'content', 'none' ); ?>
+		<?php endif; ?>
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
 </div>
-		
     
     </div>
     
-   
     
-   
-    <?php else : ?>
-    <?php get_template_part( 'content', 'none' ); ?>
-    <?php endif; ?>
-    </div>
-
-    <?php echo wpbeginner_numeric_posts_nav();?>
-                                   
-    
-    </div>
-    </div>
-    
-    </div>
     
     <script type="text/javascript">
 		jQuery(document).ready(function($){
@@ -126,12 +73,10 @@ get_header(); ?>
 		});
 		</script>
     
-    
-    <?php get_sidebar('right'); ?>
+<?php get_sidebar('right'); ?>
     
     </div>
     </div>
     <!--  bodyArea End  -->
     <!-- #primary -->
 <?php get_footer(); ?>
-
