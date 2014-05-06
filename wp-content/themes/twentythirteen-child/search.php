@@ -1,20 +1,16 @@
 <?php
 /**
- * The template for displaying Category pages
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
+ * The template for displaying Search Results pages
  *
  * @package WordPress
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
 
-get_header(); 
+get_header(); ?>
 
-$category_id = get_query_var('cat');
 
-?>
- <!--  bodyArea start  -->
+<!--  bodyArea start  -->
              
 <div class="bodyArea">
 	<div class="bodyInner clearfix">
@@ -29,52 +25,45 @@ $category_id = get_query_var('cat');
     
     <div class="recentpostOuter">
                                   
-     <?php if ( have_posts() ) : ?>
+     <?php 
+	 
+	 if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
+	 elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
+	 else { $paged = 1; }
+	 query_posts('posts_per_page=36&paged=' . $paged); 
+	 if ( have_posts() ) : ?>
     <div class="Categories">
     
     <div class="recentpost clearfix">
-        <div class="recentpost-Categories"><a href="#"><?php printf( __( '%s', 'twentythirteen' ), single_cat_title( '', true ) ); ?></a></div>
+        <div class="recentpost-Categories"><a href="#"><?php printf( __( 'Search Results for: %s', 'twentythirteen' ), get_search_query() ); ?></a></div>
         
       
     </div>
-    <?php if ( category_description() ) : // Show an optional category description ?>
-    <div class="archive-meta"><?php echo category_description(); ?></div>
-    <?php endif; ?>
+  
     
     
     
     </div>
     <?php /* The loop */ ?>
     <div id="jpages-table">
-                <?php 
-				$i=1;
+                <?php /* The loop */ ?>
+			<?php 
+			$i=1;
 				$j=0;
-				
-				
-				
-				if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
-				elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
-				else { $paged = 1; }
-				query_posts('posts_per_page=36&cat='.$category_id.'&paged=' . $paged); 
-				while ( have_posts() ) : the_post(); 
-				
-				if($i > 3 || $j==0)
-				{
-					$i=1;
-					$j=1;
+			
+			while ( have_posts() ) : the_post(); 
+			if($i > 3 || $j==0)
+			{
+				$i=1;
+				$j=1;
+			?>
+				<div class="chrismis clearfix">
+			<?php
+			}
 				?>
-                    <div class="chrismis clearfix">
-				<?php
-				}
-				?>
-                    
-                
-                
-                
-               <?php 
-			   get_template_part( 'content', get_post_format() ); ?>
-			   <?php 
-			    if($i==3)
+				<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php 
+			 if($i==3)
 				{
 					$i++;
 				?>
@@ -85,8 +74,12 @@ $category_id = get_query_var('cat');
 				{
 					$i++;
 				}
-				
-				 endwhile; ?>
+			
+			
+			endwhile; ?>
+
+</div>
+		
                  </div>
             
     
@@ -100,17 +93,12 @@ $category_id = get_query_var('cat');
     <?php endif; ?>
     </div>
 
-    					
-              						<?php echo wpbeginner_numeric_posts_nav();?>
+    		<?php echo wpbeginner_numeric_posts_nav();?>
                                    
-  
-    
-    
-    
-    </div>
     
     </div>
     </div>
+    
     
     
     
@@ -144,7 +132,6 @@ $category_id = get_query_var('cat');
 		</script>
     
     
-    
     <?php get_sidebar('right'); ?>
     
     </div>
@@ -152,3 +139,4 @@ $category_id = get_query_var('cat');
     <!--  bodyArea End  -->
     <!-- #primary -->
 <?php get_footer(); ?>
+

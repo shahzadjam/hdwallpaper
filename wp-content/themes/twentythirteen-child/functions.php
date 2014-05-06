@@ -12,6 +12,80 @@ $log_box_args = array(
 	
 	register_sidebar($log_box_args);
 	
+	
+	$top_banner_box_args = array(
+	'name'          => __( 'Top Banner Box', 'twentythirteen' ),
+	'id'            => 'top-banner-box',
+	'description'   => '',
+     'class'         => '',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h2 class="widgettitle">',
+	'after_title'   => '</h2>' ); 
+	
+	register_sidebar($top_banner_box_args);
+	
+	
+	$google_ads_box_args = array(
+	'name'          => __( 'Google Ads Box', 'twentythirteen' ),
+	'id'            => 'google-ads-box',
+	'description'   => '',
+     'class'         => '',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h2 class="widgettitle">',
+	'after_title'   => '</h2>' ); 
+	
+	register_sidebar($google_ads_box_args);
+	
+	$log_box_args = array(
+	'name'          => __( 'login Box', 'twentythirteen' ),
+	'id'            => 'my-login-box',
+	'description'   => '',
+     'class'         => '',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h2 class="widgettitle">',
+	'after_title'   => '</h2>' ); 
+	
+	register_sidebar($log_box_args);
+	
+	$find_us_box_args = array(
+	'name'          => __( 'Find Us Box', 'twentythirteen' ),
+	'id'            => 'find-us-box',
+	'description'   => '',
+     'class'         => '',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h2 class="widgettitle">',
+	'after_title'   => '</h2>' ); 
+	
+	register_sidebar($find_us_box_args);
+	
+	$my_advertisement_box_args = array(
+	'name'          => __( 'Advertisement Box', 'twentythirteen' ),
+	'id'            => 'my-advertisement-box',
+	'description'   => '',
+     'class'         => '',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h2 class="widgettitle">',
+	'after_title'   => '</h2>' ); 
+	
+	register_sidebar($my_advertisement_box_args);
+	
+	$my_socialIcone_box_args = array(
+	'name'          => __( 'Social Icone Box', 'twentythirteen' ),
+	'id'            => 'my-socialIcone-box',
+	'description'   => '',
+     'class'         => '',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h2 class="widgettitle">',
+	'after_title'   => '</h2>' ); 
+	
+	register_sidebar($my_socialIcone_box_args);
+	
 	$top_box_args = array(
 	'name'          => __( 'Top Posts Box', 'twentythirteen' ),
 	'id'            => 'my-top-posts-box',
@@ -93,7 +167,9 @@ function wpbeginner_numeric_posts_nav() {
 		$links[] = $paged + 1;
 	}
 
-	echo '<div class="jPaginate jPag-pages"><ul>' . "\n";
+	echo '<div class="postbottom-Categories">
+                               <div class="peginate clearfix">
+                               		<div id="paginationdemo" class="demo"><div class="jPaginate jPag-pages"><ul>' . "\n";
 
 	/**	Previous Post Link */
 	if ( get_previous_posts_link() )
@@ -129,6 +205,6 @@ function wpbeginner_numeric_posts_nav() {
 	if ( get_next_posts_link() )
 		printf( '<li>%s</li>' . "\n", get_next_posts_link() );
 
-	echo '</ul></div>' . "\n";
+	echo '</ul></div></div></div></div>' . "\n";
 
 }

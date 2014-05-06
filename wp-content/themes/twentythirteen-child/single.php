@@ -18,6 +18,7 @@ get_header(); ?>
 								<?php 
 								global $post;
 								while ( have_posts() ) : the_post(); 
+								$categories = get_the_category($post->ID);
 								
 								?>
                               <div class="bannerOuter fRight">
@@ -27,15 +28,13 @@ get_header(); ?>
                                 </div>
                               
                               
-                              	<div class="product-main-baner">
+                              	<div class="product-main-baner" id="product-main-baner">
                            	    <?php the_post_thumbnail('slider-thumb');
 								 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slider-thumb');
 								  $large_image_full = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
-								  
-								
 								?>
                                 
-                                <a href="<?php echo $large_image_url[0];?>&w=569&h=303" href="javascript:void(0)">Download</a>
+                                <a href="<?php echo $large_image_url[0];?>&w=569&h=303">Download</a>
                                 
                        
                                 	<form id="download_photo" name="download_photo" method="post" enctype="multipart/form-data">
@@ -53,12 +52,12 @@ get_header(); ?>
                                </div>
                                <div class="clr"></div>
                                <div class="extra-cont">
-                               <div class="extra-produtct laft-content-extra">
+                               <!--<div class="extra-produtct laft-content-extra">
                                 <P>Standard 4:3</P>
                                <P>Standard 5:4</P>
                                <P>Wide 16:10</P>
                                <P>Wide 5:3</P>
-                               </div>
+                               </div>-->
                                                              
                                <?php
 
@@ -131,55 +130,37 @@ $terms_p = get_terms("resolution",$args);
       						<?php the_content(); ?>
                           
                           <div class="recentpost clearfix">
-                                	<div class="recentpost-product"><a href="#">Recent Posts</a></div>
+                                	<div class="recentpost-product"><a href="#"><?php echo $categories[0]->name;?></a></div>
                                 	
                                   
                                 </div>
                        
                                 <div class="recentpostOuter">
                            
-                        <?php
-
-	   
-						$args = array(
-							'type'                     => 'post',
-							'child_of'                 => 0,
-							'parent'                   => '',
-							'orderby'                  => 'name',
-							'order'                    => 'ASC',
-							'hide_empty'               => 1,
-							'hierarchical'             => 1,
-							'exclude'                  => '',
-							'include'                  => '',
-							'number'                   => '',
-							'taxonomy'                 => 'category',
-							'pad_counts'               => false 
-						
-						); 
-						
-						
-						 $categories = get_categories( $args ); 
-						
-						foreach($categories as $categor)
-						{
-				  ?>    
+                      
                                
                               
                               
                                 
                                 
                                 <div class="chrismis clearfix">
-                               <?php							   
-				$my_query = new WP_Query("post_type=post&cat=".$categor->cat_ID."&showposts=3&orderby=rand");
-				
-				if ( $my_query->have_posts() ) { 
-				 while ( $my_query->have_posts() ) { 
-					$my_query->the_post();?>
+                               <?php
+							   $exclude_ids = $post->ID;	
+							   
+							   $exclude_ids = array( $post->ID);
+$my_query = new WP_Query( array( 'post_type'=>'post','cat'=>$categories[0]->term_id,'showposts'=>9,'orderby'=>'rand', 'post__not_in' => $exclude_ids ) );						   
+								/*$my_query = new WP_Query("post_type=post&post__not_in=".$exclude_ids."&cat=".$categories[0]->term_id."&showposts=3&orderby=rand");*/
+								
+								if ( $my_query->have_posts() ) { 
+								 while ( $my_query->have_posts() ) { 
+									$my_query->the_post();
+									
+									?>
                                
                                
                                 <div class="chrismisBox fLeft">
                         
-                       <?php 
+                       			<?php 
 									if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 									 ?>
                                       <a href="<?php echo the_permalink();?>">
@@ -190,15 +171,11 @@ $terms_p = get_terms("resolution",$args);
                                       <?php
 									} 
 									?>
-                        <h5><a href="<?php echo the_permalink();?>"><?php echo the_title();?></a></h5>
-                      
-                        
-                      
-                        
+                       		 <h5><a href="<?php echo the_permalink();?>"><?php echo the_title();?></a></h5>
                        </div>
                         
                         <?php
-				 }
+				 		}
 						?>
                         
                                 </div>
@@ -209,7 +186,7 @@ $terms_p = get_terms("resolution",$args);
                              
                                <?php
 				 
-				}
+				
 				}
 				wp_reset_postdata();
 				?> </div>

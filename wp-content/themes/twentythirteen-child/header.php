@@ -107,7 +107,7 @@
 
 
                 });
-                $(".product-main-baner a").click(function(event) {
+                $("#product-main-baner a").click(function(event) {
                     event.preventDefault();
                     alert("Please Wait");
                     $("#download_photo_url").val($(this).attr("href"));
@@ -241,7 +241,15 @@
 
                     <div class="logoInner clearfix">
                         <div class="logo fLeft"><a class="home-link" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>-child/images/logo.png" alt="" /></a></div>
-                        <div class="googleBanner fRight"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>-child/images/googlebanner.jpg" alt="" /></a></div>
+                        <div class="googleBanner fRight">
+                        
+                        <?php if ( is_active_sidebar( 'top-banner-box' ) ) : ?>
+                            <ul id="lang-sidebar">
+                                <?php dynamic_sidebar( 'top-banner-box' ); ?>
+                            </ul>
+                         <?php endif; ?>
+                        
+                      
                     </div>
 
                 </div>

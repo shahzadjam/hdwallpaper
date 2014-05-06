@@ -31,7 +31,7 @@ get_header();
 		<div class="product-main-baner">
         <div class="slider2">
         <?php							   
-				$my_query_banner = new WP_Query("post_type=post&&showposts=5&orderby=rand");
+				$my_query_banner = new WP_Query("post_type=post&&showposts=3&orderby=rand");
 				
 				if ( $my_query_banner->have_posts() ) { 
 				 while ( $my_query_banner->have_posts() ) { 
@@ -67,7 +67,7 @@ get_header();
 				'child_of'                 => 0,
 				'parent'                   => '',
 				'orderby'                  => 'name',
-				'order'                    => 'ASC',
+				'order'                    => 'DESC',
 				'hide_empty'               => 1,
 				'hierarchical'             => 1,
 				'exclude'                  => '',
@@ -87,7 +87,7 @@ get_header();
 				<div class="recentpostOuter">
 						
 						  <div class="recentpost clearfix">
-								<div class="recentbutton fLeft"><a href="#">Recent Posts</a></div>
+								<div class="recentbutton fLeft"><a href="<?php echo site_url($categor->slug);?>"><?php echo $categor->name;?></a></div>
 								
 							  <div class="socialButton fRight">
 							  <?php echo do_shortcode('[hupso]');?>
