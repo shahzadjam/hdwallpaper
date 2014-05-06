@@ -34,7 +34,7 @@ get_header(); ?>
 								  $large_image_full = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
 								?>
                                 
-                                <a href="<?php echo $large_image_url[0];?>&w=569&h=303">Download</a>
+                                <a href="<?php echo $large_image_url[0];?>&w=569&h=303"><button>Download</button></a>
                                 
                        
                                 	<form id="download_photo" name="download_photo" method="post" enctype="multipart/form-data">
@@ -130,7 +130,7 @@ $terms_p = get_terms("resolution",$args);
       						<?php the_content(); ?>
                           
                           <div class="recentpost clearfix">
-                                	<div class="recentpost-product"><a href="#"><?php echo $categories[0]->name;?></a></div>
+                                	<div class="recentpost-product"><a href="#">Related wallpaper</a></div>
                                 	
                                   
                                 </div>
@@ -192,6 +192,13 @@ $my_query = new WP_Query( array( 'post_type'=>'post','cat'=>$categories[0]->term
 				?> </div>
                                 <?php endwhile; ?> 
                               </div>
+                              <div class="product-main-baner content-area">
+                           	   
+                                
+                       
+                                	<?php the_content(); ?>
+                              
+                                </div>
                             
                            </div>
                             
