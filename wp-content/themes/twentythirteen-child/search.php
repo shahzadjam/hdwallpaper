@@ -34,9 +34,35 @@ get_header(); ?>
 			</header>
 
 			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
+			<?php 
+			
+			
+				$i=1;
+				$j=0;
+				while ( have_posts() ) : the_post(); 
+				
+				if($i > 3 || $j==0)
+				{
+					$i=1;
+					$j=1;
+				?>
+                    <div class="chrismis clearfix">
+				<?php
+				}
+				?>
+               <?php  get_template_part( 'content', get_post_format() ); 
+				if($i==3)
+				{
+					$i++;
+				?>
+					</div>
+				<?php
+				}
+				else
+				{
+					$i++;
+				}
+				endwhile; ?>
 
 			<?php twentythirteen_paging_nav(); ?>
 
