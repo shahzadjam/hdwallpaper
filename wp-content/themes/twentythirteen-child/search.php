@@ -23,8 +23,14 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
+    
+    
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentythirteen' ), get_search_query() ); ?></h1>
+				<div class="recentpost clearfix">
+        <div class="recentpost-Categories"><a href="#"><?php printf( __( 'Search Results for: %s', 'twentythirteen' ), get_search_query() ); ?></a></div>
+        
+      
+    </div>
 			</header>
 
 			<?php /* The loop */ ?>
