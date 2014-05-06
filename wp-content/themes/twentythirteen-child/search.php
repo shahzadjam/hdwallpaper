@@ -80,8 +80,6 @@ get_header(); ?>
 
 </div>
 		
-                 </div>
-            
     
     </div>
     
@@ -93,16 +91,13 @@ get_header(); ?>
     <?php endif; ?>
     </div>
 
-    		<?php echo wpbeginner_numeric_posts_nav();?>
+    <?php echo wpbeginner_numeric_posts_nav();?>
                                    
     
     </div>
     </div>
     
     </div>
-    
-    
-    
     
     <script type="text/javascript">
 		jQuery(document).ready(function($){
