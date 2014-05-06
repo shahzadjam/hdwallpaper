@@ -30,89 +30,45 @@ $category_id = get_query_var('cat');
     <div class="recentpostOuter">
                                   
      <?php if ( have_posts() ) : ?>
-    <div class="Categories">
+     <div class="Categories">
+     <header class="page-header">
+    
     
     <div class="recentpost clearfix">
         <div class="recentpost-Categories"><a href="#"><?php printf( __( '%s', 'twentythirteen' ), single_cat_title( '', true ) ); ?></a></div>
         
       
     </div>
+    </header>
     <?php if ( category_description() ) : // Show an optional category description ?>
     <div class="archive-meta"><?php echo category_description(); ?></div>
     <?php endif; ?>
     
     
-    
-    </div>
+   
     <?php /* The loop */ ?>
     <div id="jpages-table">
                 <?php 
-				$i=1;
-				$j=0;
-				
-				
-				
 				if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
 				elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
 				else { $paged = 1; }
 				query_posts('posts_per_page=36&cat='.$category_id.'&paged=' . $paged); 
 				while ( have_posts() ) : the_post(); 
-				
-				if($i > 3 || $j==0)
-				{
-					$i=1;
-					$j=1;
-				?>
-                    <div class="chrismis clearfix">
-				<?php
-				}
-				?>
-                    
-                
-                
-                
-               <?php 
-			   get_template_part( 'content', get_post_format() ); ?>
-			   <?php 
-			    if($i==3)
-				{
-					$i++;
-				?>
-					</div>
-				<?php
-				}
-				else
-				{
-					$i++;
-				}
+			
+			   get_template_part( 'content', get_post_format() );
 				
 				 endwhile; ?>
-                 </div>
-            
-    
-    </div>
-    
-   
-    
-   
     <?php else : ?>
-    <?php get_template_part( 'content', 'none' ); ?>
+    		<?php get_template_part( 'content', 'none' ); ?>
     <?php endif; ?>
     </div>
-
-    					
-              						<?php echo wpbeginner_numeric_posts_nav();?>
-                                   
-  
-    
-    
-    
+	<?php echo wpbeginner_numeric_posts_nav();?>
     </div>
-    
+     </div>
     </div>
     </div>
     
-    
+    </div>
     
     
     
