@@ -38,17 +38,7 @@ $log_box_args = array(
 	
 	register_sidebar($google_ads_box_args);
 	
-	$log_box_args = array(
-	'name'          => __( 'login Box', 'twentythirteen' ),
-	'id'            => 'my-login-box',
-	'description'   => '',
-     'class'         => '',
-	'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h2 class="widgettitle">',
-	'after_title'   => '</h2>' ); 
-	
-	register_sidebar($log_box_args);
+
 	
 	$find_us_box_args = array(
 	'name'          => __( 'Find Us Box', 'twentythirteen' ),

@@ -68,72 +68,72 @@
                 //          you should generally be able to reduce the scope of the selector below "document" but it is used in this example so it
                 //          works for possible dynamic manipulation in the entire DOM
                 //
-                $(document).on("click", "a.fileDownloadPromise", function() {
-                    $.fileDownload($(this).prop('href'))
-                    .done(function() {
-                        alert('File download a success!');
-                    })
-                    .fail(function() {
-                        alert('File download failed!');
-                    });
+//                $(document).on("click", "a.fileDownloadPromise", function() {
+//                    $.fileDownload($(this).prop('href'))
+//                    .done(function() {
+//                        alert('File download a success!');
+//                    })
+//                    .fail(function() {
+//                        alert('File download failed!');
+//                    });
+//
+//                    return false; //this is critical to stop the click event which will trigger a normal file download
+//                });
 
-                    return false; //this is critical to stop the click event which will trigger a normal file download
-                });
-
-                $(".extra-produtct a").click(function(event) {
-                    event.preventDefault();
-                    alert("Please Wait");
-                    $("#download_photo_url").val($(this).attr("href"));
-
-
-                    //$("#secretIFrame").attr("src","download.php?download_file=" + encodeURI($(this).attr("href")+"");
-
-                    $url = "<?php echo site_url("/") ?>download.php?download_file=" + encodeURI($(this).attr("href"));
-                    $.ajax({
-                        type: 'GET',
-                        url: $url,
-                        success: function(data) {
-                            if (data == true) {
-                                alert('This file is not available for download.');
-                            } else {
-                                window.location = "" + $url + "";
-                            }
-                        }
-
-                    })
-
-
-                    document.body.innerHTML += "<iframe src='" + $(this).attr("href") + "' style='display: none;' ></iframe>";
-
-
-                });
-                $("#product-main-baner a").click(function(event) {
-                    event.preventDefault();
-                    alert("Please Wait");
-                    $("#download_photo_url").val($(this).attr("href"));
-
-
-                    //$("#secretIFrame").attr("src","download.php?download_file=" + encodeURI($(this).attr("href")+"");
-
-                    $url = "<?php echo site_url("/") ?>download.php?download_file=" + encodeURI($(this).attr("href"));
-                    $.ajax({
-                        type: 'GET',
-                        url: $url,
-                        success: function(data) {
-                            if (data == true) {
-                                alert('This file is not available for download.');
-                            } else {
-                                window.location = "" + $url + "";
-                            }
-                        }
-
-                    })
-
-
-                    document.body.innerHTML += "<iframe src='" + $(this).attr("href") + "' style='display: none;' ></iframe>";
-
-
-                });
+//                $(".extra-produtct a").click(function(event) {
+//                    event.preventDefault();
+//                    alert("Please Wait");
+//                    $("#download_photo_url").val($(this).attr("href"));
+//
+//
+//                    //$("#secretIFrame").attr("src","download.php?download_file=" + encodeURI($(this).attr("href")+"");
+//
+//                    $url = "<?php echo site_url("/") ?>download.php?download_file=" + encodeURI($(this).attr("href"));
+//                    $.ajax({
+//                        type: 'GET',
+//                        url: $url,
+//                        success: function(data) {
+//                            if (data == true) {
+//                                alert('This file is not available for download.');
+//                            } else {
+//                                window.location = "" + $url + "";
+//                            }
+//                        }
+//
+//                    })
+//
+//
+//                    document.body.innerHTML += "<iframe src='" + $(this).attr("href") + "' style='display: none;' ></iframe>";
+//
+//
+//                });
+//                $("#product-main-baner a").click(function(event) {
+//                    event.preventDefault();
+//                    alert("Please Wait");
+//                    $("#download_photo_url").val($(this).attr("href"));
+//
+//
+//                    //$("#secretIFrame").attr("src","download.php?download_file=" + encodeURI($(this).attr("href")+"");
+//
+//                    $url = "<?php echo site_url("/") ?>download.php?download_file=" + encodeURI($(this).attr("href"));
+//                    $.ajax({
+//                        type: 'GET',
+//                        url: $url,
+//                        success: function(data) {
+//                            if (data == true) {
+//                                alert('This file is not available for download.');
+//                            } else {
+//                                window.location = "" + $url + "";
+//                            }
+//                        }
+//
+//                    })
+//
+//
+//                    document.body.innerHTML += "<iframe src='" + $(this).attr("href") + "' style='display: none;' ></iframe>";
+//
+//
+//                });
 
                 $(".slider2").slidesjs({
                     play: {
@@ -254,6 +254,8 @@
 
                 </div>
 
+                
+            </div>
                 <div class="menuOuter">
 
                     <div class="menuInner">
@@ -286,5 +288,4 @@
 
                     </div>
                 </div>
-            </div>
             <!--  header end -->

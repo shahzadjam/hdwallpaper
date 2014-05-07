@@ -27,7 +27,11 @@ if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Right') ) 
 
 <div class="addChoices">
 <img src="<?php echo get_template_directory_uri(); ?>-child/images/add.jpg" width="308" height="444" alt="" />
-
+<?php if ( is_active_sidebar( 'google-ads-box-box' ) ) : ?>
+                            <ul id="google-ads-box-box-sidebar">
+                                <?php dynamic_sidebar( 'google-ads-box' ); ?>
+                            </ul>
+                         <?php endif; ?>
  <div class="addborder"></div>
  
  
@@ -43,7 +47,11 @@ if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Right') ) 
     </div>
     
     
-    <div class="findright fRight"><img src="<?php echo get_template_directory_uri(); ?>-child/images/pettran.jpg"  alt="" /></div>
+    <div class="findright fRight"><?php if ( is_active_sidebar( 'find-us-box' ) ) : ?>
+                            <ul id="find-us-box-sidebar">
+                                <?php dynamic_sidebar( 'find-us-box' ); ?>
+                            </ul>
+                         <?php endif; ?></div>
     
     
     
@@ -62,7 +70,9 @@ if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Right') ) 
     </div>
     
     
-    <div class="findright02 fRight"><img src="<?php echo get_template_directory_uri(); ?>-child/images/pettran.jpg"  alt="" /></div>
+    <div class="findright02 fRight"> 
+    <img alt="" src="<?php echo get_template_directory_uri(); ?>-child/images/pettran.jpg">
+						<</div>
     
    
     
@@ -70,13 +80,17 @@ if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Right') ) 
 </div> 
 
 <div class="socialIcone clearfix">
-
-<a href="#"> <img src="<?php echo get_template_directory_uri(); ?>-child/images/facebook.jpg"  alt="" /></a>
+<?php if ( is_active_sidebar( 'my-socialIcone-box' ) ) : ?>
+    <ul id="my-socialIcone-box-sidebar">
+        <?php dynamic_sidebar( 'my-socialIcone-box' ); ?>
+    </ul>
+ <?php endif; ?>
+<!--<a href="#"> <img src="<?php echo get_template_directory_uri(); ?>-child/images/facebook.jpg"  alt="" /></a>
 
 <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>-child/images/twitter.jpg"  alt="" /></a>
 <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>-child/images/d.jpg"  alt="" /></a>
 <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>-child/images/youtube.jpg"  alt="" /></a>
-<a href="#"> <img src="<?php echo get_template_directory_uri(); ?>-child/images/Be.jpg"  alt="" /></a>
+<a href="#"> <img src="<?php echo get_template_directory_uri(); ?>-child/images/Be.jpg"  alt="" /></a>-->
 
 
 </div>
@@ -88,7 +102,12 @@ if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Right') ) 
     </div>
     
     
-    <div class="findright03 fRight"><img src="<?php echo get_template_directory_uri(); ?>-child/images/pattren2.jpg"  alt="" /></div>    
+    <div class="findright03 fRight">
+						<?php if ( is_active_sidebar( 'my-advertisement-box' ) ) : ?>
+                            <ul id="my-advertisement-box-sidebar">
+                                <?php dynamic_sidebar( 'my-advertisement-box' ); ?>
+                            </ul>
+                         <?php endif; ?></div>    
 </div>
 
 
